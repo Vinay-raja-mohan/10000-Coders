@@ -1,2 +1,2 @@
-import keywords
-print(keywords.kwlist)
+import keyword
+print(keyword.kwlist)

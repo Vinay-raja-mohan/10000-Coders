@@ -1,0 +1,1 @@
+today we installed python software in our systems, we use vs code to run codes.
