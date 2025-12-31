@@ -1,0 +1,35 @@
+DDL : Data Defination Language
+create :- 
+    1. create a database
+        SYNTAX - CREATE DATABASE database_name;
+            ex - CREATE DATABASE 84r;
+    2. create a table
+        SYNTAX - CREATE TABLE table_name(col1 datatype(size), col2 datatype(size),....n);
+            ex - CREATE TABLE Student()
+            DESC table_name #structure of table
+    3. create a user
+
+alter :-
+    1. ADD column at last
+        ALTER TABLE table_name ADD colName DATATYPE; #this adds a column at the end of the table
+    2. ADD column first or according tot teh position
+        ALTER TABLE table_name ADD COLUMN newColumnName DATATYPE POSITION; #POSITION - FIRST , AFTER variable_name;
+    3. modify dataType / Change DataType
+        ALTER TABLE table_name MODIFY column_name newDataType;
+    4. rename column_name
+        ALTER TABLE table_name RENAME COLUMN column_name TO newColumnName;
+    5. Drop - Delete a column
+        ALTER TABLE table_name DROP COLUMN column_name;
+
+rename :- rename old table name to new table name.
+    RENAME TABLE table_name TO NewTableName;
+
+truncate :- deletes the data inside the table but not the headings like ccolumns names ie- structure.
+    TRUNCATE TABLE table_name;
+
+drop :- deletes the whole table no records will be left out
+    DROP TABLE table_name;
+
+
+-----TASK-----
+create a employee table with any 2 columns ,add 1 col at first and one col at last , and same middle modify datatype of emp_name col rename emp_id and drop any one col.
