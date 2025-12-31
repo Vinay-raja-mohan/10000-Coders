@@ -1,1 +1,17 @@
 today we installed python software in our systems, we use vs code to run codes.
+
+Data type :
+a data type defines the value of the variabale and what is stored inside the varibale and what operations cans be performed on the particular varibale
+Types of varibales
+    1.primitive : stores only one value.
+      int = +ve , -ve , 0's , binary(0b1,0b101=5) , octal(0o01234567) , hexadecimal(0x012345679abcdef), a=int().
+      float = 1.2,-1, 2, 2.5e3(2.5 * 10**3 ) , a=float(), 2E3(2 * e**3).
+      complex
+      bool = True=1 , False=0
+      str
+    2.non-primitive : can store upto many values in a single vairable.
+
+
+
+use type(variable_name) -> to find the daa type of a variable
+
