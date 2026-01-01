@@ -32,6 +32,23 @@ Float – Questions
 5. Write a variable to store the price of an item.
   Price_Of_Item = 30.0
 
+Boolean (bool) – Questions 
+
+1. What data type stores true or false values?
+  bool
+
+2. Write an example of a bool variable declaration.
+  A = True , B = false
+
+3. How many values can a bool data type have?
+  2
+
+4. Which of the following is a boolean value: 1, true, 2.5?
+  True
+
+5. Write a variable to check whether a student has passed an exam.
+  Exam_Passes = True
+
 
 
 
