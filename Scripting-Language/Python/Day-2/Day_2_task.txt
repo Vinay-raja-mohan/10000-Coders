@@ -1,0 +1,23 @@
+Integer (int) – Questions 
+
+1. What data type is used to store whole numbers?
+2. Write an example of an int variable declaration.
+3. Can an int store a decimal number? (Yes/No)
+4. Which of the following is an integer: 5, 3.2, true?
+5. Write a variable to store the number of students in a class.
+
+ Float – Questions 
+
+1. What data type is used to store decimal numbers?
+2. Write an example of a float variable declaration.
+3. Can a float store whole numbers? (Yes/No)
+4. Which of the following is a float: 10, 4.5, false?
+5. Write a variable to store the price of an item.
+
+ Boolean (bool) – Questions 
+
+1. What data type stores true or false values?
+2. Write an example of a bool variable declaration.
+3. How many values can a bool data type have?
+4. Which of the following is a boolean value: 1, true, 2.5?
+5. Write a variable to check whether a student has passed an exam.

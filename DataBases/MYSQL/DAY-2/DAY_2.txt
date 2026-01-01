@@ -1,18 +1,18 @@
 DDL : Data Defination Language
 create :- 
-    1. create a database
+    1. create a DATABASE
         SYNTAX - CREATE DATABASE database_name;
             ex - CREATE DATABASE 84r;
-    2. create a table
+    2. create a TABLE
         SYNTAX - CREATE TABLE table_name(col1 datatype(size), col2 datatype(size),....n);
             ex - CREATE TABLE Student()
             DESC table_name #structure of table
-    3. create a user
+    3. create a USER
 
-alter :-
+ALTER :-
     1. ADD column at last
         ALTER TABLE table_name ADD colName DATATYPE; #this adds a column at the end of the table
-    2. ADD column first or according tot teh position
+    2. ADD column first or according to the position
         ALTER TABLE table_name ADD COLUMN newColumnName DATATYPE POSITION; #POSITION - FIRST , AFTER variable_name;
     3. modify dataType / Change DataType
         ALTER TABLE table_name MODIFY column_name newDataType;

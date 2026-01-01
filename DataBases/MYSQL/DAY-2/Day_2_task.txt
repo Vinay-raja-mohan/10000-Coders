@@ -1,0 +1,12 @@
+SQL TASK
+
+Create an Employee table with any 2 columns.
+Add a new column to the table at first.
+Add a new column to the table at last.
+Add a new column to the table after a specific column.
+Modify the datatype of Emp_name column.
+Rename emp_id column name.
+Drop any one column.
+
+
+*Do minimum 5 examples on each command* -mandatory.

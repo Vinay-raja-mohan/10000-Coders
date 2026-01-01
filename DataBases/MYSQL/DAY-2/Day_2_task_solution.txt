@@ -1,0 +1,185 @@
+ EXAMPLE-1
+ MySQL  localhost:33060+ ssl  84r  SQL > CREATE TABLE Employee(S_No INT,Name VARCHAR(50));
+Query OK, 0 rows affected (0.0671 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| S_No  | int         | YES  |     | NULL    |       |
+| Name  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.0114 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee ADD COLUMN Ranks BIGINT FIRST;
+Query OK, 0 rows affected (0.0720 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Ranks | bigint      | YES  |     | NULL    |       |
+| S_No  | int         | YES  |     | NULL    |       |
+| Name  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.0026 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee ADD Gender VARCHAR(10);
+Query OK, 0 rows affected (0.0570 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| Ranks  | bigint      | YES  |     | NULL    |       |
+| S_No   | int         | YES  |     | NULL    |       |
+| Name   | varchar(50) | YES  |     | NULL    |       |
+| Gender | varchar(10) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.0038 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee ADD Last_Name VARCHAR(50) AFTER Name;
+Query OK, 0 rows affected (0.0846 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Ranks     | bigint      | YES  |     | NULL    |       |
+| S_No      | int         | YES  |     | NULL    |       |
+| Name      | varchar(50) | YES  |     | NULL    |       |
+| Last_Name | varchar(50) | YES  |     | NULL    |       |
+| Gender    | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.0033 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER RABLE Employee MODIFY Name CHAR;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'RABLE Employee MODIFY Name CHAR' at line 1
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee MODIFY Name CHAR;
+Query OK, 0 rows affected (0.0733 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Ranks     | bigint      | YES  |     | NULL    |       |
+| S_No      | int         | YES  |     | NULL    |       |
+| Name      | char(1)     | YES  |     | NULL    |       |
+| Last_Name | varchar(50) | YES  |     | NULL    |       |
+| Gender    | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.0081 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee RENAME COLUMN S_N0 TO Employee_ID;
+ERROR: 1054: Unknown column 'S_N0' in 'employee'
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee RENAME COLUMN S_No TO Employee_ID;
+Query OK, 0 rows affected (0.0265 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Ranks       | bigint      | YES  |     | NULL    |       |
+| Employee_ID | int         | YES  |     | NULL    |       |
+| Name        | char(1)     | YES  |     | NULL    |       |
+| Last_Name   | varchar(50) | YES  |     | NULL    |       |
+| Gender      | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.0020 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Employee DROP COLUMN Ranks;
+Query OK, 0 rows affected (0.0571 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC employee;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Employee_ID | int         | YES  |     | NULL    |       |
+| Name        | char(1)     | YES  |     | NULL    |       |
+| Last_Name   | varchar(50) | YES  |     | NULL    |       |
+| Gender      | varchar(10) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0018 sec)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Example - 2
+
+ MySQL  localhost:33060+ ssl  84r  SQL > CREATE TABLE Students_Info(Roll_No INT, Name VARCHAR(20));
+Query OK, 0 rows affected (0.0308 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL >
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC Students_Info;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Roll_No | int         | YES  |     | NULL    |       |
+| Name    | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.0028 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info ADD COLUMN S_No INT FIRST;
+Query OK, 0 rows affected (0.0762 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC Students_Info;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| S_No    | int         | YES  |     | NULL    |       |
+| Roll_No | int         | YES  |     | NULL    |       |
+| Name    | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.0024 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info ADD COLUMN GENDER VARCHAR(5) LAST;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LAST' at line 1
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info ADD COLUMN GENDER VARCHAR(5);
+Query OK, 0 rows affected (0.0567 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info ADD COLUMN Section CHAR(1) AFTER GENDER;
+Query OK, 0 rows affected (0.0478 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC Students_Info;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| S_No    | int         | YES  |     | NULL    |       |
+| Roll_No | int         | YES  |     | NULL    |       |
+| Name    | varchar(20) | YES  |     | NULL    |       |
+| GENDER  | varchar(5)  | YES  |     | NULL    |       |
+| Section | char(1)     | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.0023 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info MODIFY COLUMN Section VARCHAR(1);
+Query OK, 0 rows affected (0.0638 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info RENAME GENDER TO Gender;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TO Gender' at line 1
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_Info RENAME COLUMN GENDER TO Gender;
+Query OK, 0 rows affected (0.0252 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC Students_Info;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| S_No    | int         | YES  |     | NULL    |       |
+| Roll_No | int         | YES  |     | NULL    |       |
+| Name    | varchar(20) | YES  |     | NULL    |       |
+| Gender  | varchar(5)  | YES  |     | NULL    |       |
+| Section | varchar(1)  | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.0026 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > ALTER TABLE Students_info DROP S_No;
+Query OK, 0 rows affected (0.0485 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > DESC Students_Info;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Roll_No | int         | YES  |     | NULL    |       |
+| Name    | varchar(20) | YES  |     | NULL    |       |
+| Gender  | varchar(5)  | YES  |     | NULL    |       |
+| Section | varchar(1)  | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.0019 sec)
