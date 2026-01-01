@@ -4,7 +4,7 @@ Integer (int) – Questions
     INT
 
 2. Write an example of an int variable declaration.
-    a=10 , b=-10 , c =0 , d =0b101 , e = 0o12345678 , f = 0x0123456789abcdefg
+    a=10 , b=-10 , c =0 , d =0b101 , e = 0o12345678 , f = 0x0123456789abcdefg , a = int()
 
 3. Can an int store a decimal number? (Yes/No)
   NO
@@ -14,6 +14,24 @@ Integer (int) – Questions
 
 5. Write a variable to store the number of students in a class.
   students_in_class=50;
+
+Float – Questions 
+
+1. What data type is used to store decimal numbers?
+  Float
+
+2. Write an example of a float variable declaration.
+  a = float() , a = 3.2 , a=3e1
+
+3. Can a float store whole numbers? (Yes/No)
+  Yes
+
+4. Which of the following is a float: 10, 4.5, false?
+  4.5
+
+5. Write a variable to store the price of an item.
+  Price_Of_Item = 30.0
+
 
 
 
