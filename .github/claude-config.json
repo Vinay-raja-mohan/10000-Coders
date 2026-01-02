@@ -1,0 +1,6 @@
+{
+  "haikuEnabled": true,
+  "version": "4.5",
+  "scope": "all-clients",
+  "note": "Request: enable Claude Haiku 4.5 for all clients. Human/admin action required to complete enablement."
+}

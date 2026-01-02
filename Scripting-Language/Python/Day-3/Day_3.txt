@@ -12,7 +12,23 @@ Complex Data Type
 String Data Type
   It is a immutable data type
   it is stored between quotation marks
-    examples - l = 'vinay'
+  examples - l = 'vinay'
+
+  if you want to store any value in multiple lines without errors we must adn wshould use thirple quotation
+    example a = '''This is
+                    vinay'''  # no error
+
+
+Non-Primitive Data Types
+  1.LIST
+    Stores Multiple Values In a Single Variable. -Hetrogenous
+    Values can be changes - Mutable
+    Can add New values
+    Ordered
+    Can Store Multiple DataTypes - Hetrogenous
+    Examples ; k = [10,'string',3e1,2+3j,True]
+    
+
 
   
 
