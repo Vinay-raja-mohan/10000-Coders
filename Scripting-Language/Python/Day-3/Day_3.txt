@@ -12,6 +12,9 @@ Complex Data Type
 String Data Type
   It is a immutable data type
   it is stored between quotation marks
+  iterable
+  slicing
+  allows duplicates
   examples - l = 'vinay'
 
   if you want to store any value in multiple lines without errors we must adn wshould use thirple quotation
@@ -26,8 +29,12 @@ Non-Primitive Data Types
     Can add New values
     Ordered
     Can Store Multiple DataTypes - Hetrogenous
+    Supports iteration
+    Supports slicing
+    use .append(value) to add new values at the end  # k.append(10)
+    use .remove(value) to remove a value # k.remove(20)
     Examples ; k = [10,'string',3e1,2+3j,True]
-    
+
 
 
   
