@@ -1,0 +1,18 @@
+Complex Data Type
+  Mixture of a real and a imaginary number for example "2+3j" , "2-3j" , "3j" ,
+  We can add , sub ,  divide , multiply
+
+  We can just print the real and imaginary part seperately
+        l=2+3j
+        print(l.real)  #2.0
+        print(l.imag)  #3.0
+
+      imaginary_value = j**2 = -1
+
+String Data Type
+  It is a immutable data type
+  it is stored between quotation marks
+    examples - l = 'vinay'
+
+  
+
