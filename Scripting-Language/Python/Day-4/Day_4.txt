@@ -1,0 +1,16 @@
+Tuple DataType
+
+Tuple is immutable where the values cant be updated or removed or added.
+Supports indexing and slicing.
+
+We can declare tuple in the following ways.
+j=()
+k=tuple()
+
+but is we declaration
+j = (20) then this is a int not a tuple () those brackets are not very important , multiple values are those which matter in tuple.
+j = (20,) then this is a tuple data type.
+
+Tuples allow Hetrogenous values like a LIST
+t = (10,'python',3.2,True,2+3j,[10,20,30]) #tuple
+

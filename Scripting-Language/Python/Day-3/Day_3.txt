@@ -31,9 +31,14 @@ Non-Primitive Data Types
     Can Store Multiple DataTypes - Hetrogenous
     Supports iteration
     Supports slicing
-    use .append(value) to add new values at the end  # k.append(10)
-    use .remove(value) to remove a value # k.remove(20)
+    use .append(value) to add new values at the end  # k.append(10) 10 is a value not a index position
+    use .remove(value) to remove a value # k.remove(20) 20 is a value not a index position
     Examples ; k = [10,'string',3e1,2+3j,True]
+
+    2.NESTED LIST
+      A list inside a list.
+      j=[10,20,[100,300],[1000,3000]]
+      j[2][0] #100
 
 
 
