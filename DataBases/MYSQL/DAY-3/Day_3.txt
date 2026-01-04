@@ -1,0 +1,8 @@
+Today i have learnt about sql constraints;
+there area 6 types of constraints
+    1. NOT NULL
+    2. UNIQUE
+    3. PRIMARY kEY
+    4. FORIEGN kEY
+    5. CHECK
+    6. DEFAULT
