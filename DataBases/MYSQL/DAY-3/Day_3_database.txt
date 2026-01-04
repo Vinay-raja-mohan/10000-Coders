@@ -1,0 +1,40 @@
+ MySQL  localhost:33060+ ssl  84r  SQL > create table new(id int not null, roll int unique, qr int primary key,name varchar(1) default 'v', age int , constraint age_check check(age >= 18));
+Query OK, 0 rows affected (0.0424 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > desc new;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| id    | int        | NO   |     | NULL    |       |
+| roll  | int        | YES  | UNI | NULL    |       |
+| qr    | int        | NO   | PRI | NULL    |       |
+| name  | varchar(1) | YES  |     | v       |       |
+| age   | int        | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+5 rows in set (0.0112 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > insert into new(id,roll,qr,age) values (1,1,1,18),(1,2,2,20),(0,3,3,21);
+Query OK, 3 rows affected (0.0144 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > select * from new;
++----+------+----+------+-----+
+| id | roll | qr | name | age |
++----+------+----+------+-----+
+|  1 |    1 |  1 | v    |  18 |
+|  1 |    2 |  2 | v    |  20 |
+|  0 |    3 |  3 | v    |  21 |
++----+------+----+------+-----+
+3 rows in set (0.0006 sec)
+ MySQL  localhost:33060+ ssl  84r  SQL > alter table new add column gender varchar(5) default 'male';
+Query OK, 0 rows affected (0.0245 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  84r  SQL > select * from new;
++----+------+----+------+-----+--------+
+| id | roll | qr | name | age | gender |
++----+------+----+------+-----+--------+
+|  1 |    1 |  1 | v    |  18 | male   |
+|  1 |    2 |  2 | v    |  20 | male   |
+|  0 |    3 |  3 | v    |  21 | male   |
++----+------+----+------+-----+--------+
+3 rows in set (0.0008 sec)
+
