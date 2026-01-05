@@ -21,3 +21,28 @@ for x,y in d1.items():
 print("-----")
 
 print(len(d1))  #length of dictionary
+
+print('----------')
+
+"Operations"
+
+"Operations on Sets"
+s1 = {10,20,30,40}
+s2 = {30,40,50,60}
+for x in s2:
+    s1.add(x)  #union operation
+print(s1)
+
+
+"Operations on Tuples"
+t1 = (10,20,30)
+t2 = (40,50,60)
+t3 = t1 + t2  #concatenation
+print(t3)
+
+"Operations on Dictionaries"
+d3 = {'a':10,'b':20,'c':30}
+d4 = {'d':40,'e':50}
+
+for k,v in d4.items():
+    d3[k] = v  #merging two dictionaries

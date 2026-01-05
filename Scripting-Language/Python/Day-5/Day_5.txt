@@ -1,0 +1,13 @@
+OPERATORS
+  Special symbol used to perform operation on variable and values.
+
+1.Arithemetic Operators
+    + , - , * , / , // , % , **
+
+2. Comparison (Relational) Operators
+
+3. Assignment Operators
+
+4. Logical Operators
+
+5. 

@@ -38,8 +38,9 @@ print(d['sai'])
 
 no indexing positions , we only use keys.
 keys must always be immutable,which cannot be changed
+k.update({'name':20}) #with using method
+d['age']=20 #without usign a method
 
-variable_name.update({'name':20})
-d['age']=20
+d.pop('name')
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
