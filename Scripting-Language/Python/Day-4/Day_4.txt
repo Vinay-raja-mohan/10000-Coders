@@ -37,6 +37,7 @@ print(d['sai'])
 
 
 no indexing positions , we only use keys.
+unordered
 keys must always be immutable,which cannot be changed
 k.update({'name':20}) #with using method
 d['age']=20 #without usign a method

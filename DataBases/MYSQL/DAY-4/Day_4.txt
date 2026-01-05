@@ -1,0 +1,76 @@
+Order By Clause
+  comes under select Clause
+  sets the order of the table in a ASCENDING or DESCNDING Order
+
+  SELECT * FROM table_name ORDER BY column_name ASC/DESC
+
+  exampler:
+    select * from vinay where marks < 70 order by marks desc limit 3;
+
+
+----------------------------------------------------------------------
+aggregate function
+COUNT() - tells number of id's 
+MAX() -  Maximum of all  
+MIN() -  Minimum of all
+SUM() -  Sum of all
+AVG() -  Average of all
+
+these functions can be used across many functions in db but the main one is the select function.
+
+------------------------------------------------------------------------
+GROUP BY Clause
+this clause is used to group values of a table.
+sub function of select
+
+SELECT column-have-aggregate FROM table_name GROUP BY column_to_be_grouped;
+
+--------------------------------------------------------------------------
+HAVING Clause
+Similar to WHERE
+we cant apply WHERE clause on GROUP BY there HAVING Clause can be used
+
+SELECT Column_to_use/display
+FROM Table_Name
+WHERE constraint
+GROUP BY column_to_be_grouped;
+HAVING constraint
+ORDER BY Column_to_be_ordered ASC/DESC;
+
+---------------------------------------------------------------------------
+Table Related Queries
+
+UPDATE
+To update a ROW in a table change the values inside the row like
+name     age
+vi        10
+change the name to vinay and age to 15
+
+name      age
+vinay     15
+
+UPDATE Table_Name
+SET column_name1 = New_Value1,column_name1\2 = New_Value2
+WHERE Old_value1,Old_value2
+
+--------------------------------------------------------------------------
+OFF SAFE MODE
+SET SQL_SAFE_UPDATE = 0;
+
+ON SAFE MODE
+SET SQL_SAFE_UPDATE = 1;
+
+---------------------------------------------------------------------------
+DELETE ROWS
+
+DELETE FROM table_name
+WHERE condition;
+
+ex:
+  DELETE FROM table1
+  WHERE marks < 50;
+
+-----------------------------------------------------------------------------
+CASCADING FORIEGN kEY
+ON DELETE CASCADE - if primary key gets deleted then fk also gets deleted
+ON UPDATE CASCADE - if primary key gets updated then fk also gets updated

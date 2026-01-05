@@ -14,5 +14,5 @@ b= '''This is a multi-line
 string example.'''
 
 print(b)
-
-
+print("----------------------------")
+print([1,2,3])
