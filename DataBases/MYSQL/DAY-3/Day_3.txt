@@ -6,3 +6,26 @@ there area 6 types of constraints
     4. FORIEGN kEY
     5. CHECK
     6. DEFAULT
+
+
+---------------------------------------------------------------
+select clause
+this clause can select and display the columns or the whole table at once
+the syntax is 
+    SELECT * FROM Table_name; # to display the whole table
+    SELECT column1,column2 FROM Table_name; # to display the column that is requries
+----------------------------------------------------------------
+WHERE clause
+Specially used with select clause
+syntax:
+    SELECT * FROM Table_Name WHERE constraint;
+    these constraints cant be
+        Arithemetic: +,-,*,/,%
+        Comparison: =, !=, >, <, <=, >=
+        Logical: AND,OR,NOT,IN,BETWEEN,ALL,LIKE,ANY
+        Bitwise: &, |
+-----------------------------------------------------------------
+Limit Clause
+to limit the number of elements to print or show
+used in SELECT
+

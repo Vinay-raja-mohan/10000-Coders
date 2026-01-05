@@ -14,14 +14,16 @@ j = (20,) then this is a tuple data type.
 Tuples allow Hetrogenous values like a LIST
 t = (10,'python',3.2,True,2+3j,[10,20,30]) #tuple
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------
 SET DataType
 It doesnt allow duplicate values unlike list and tuple, declared in a flow brackets
 it is Mutable we can add values after declaration too.
 it does not store values in an order.
 Hetrogenous
 A set inside a set is not allowed i.e nested sets are not possible
-
+.add()
+.remove()
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 DICT DataType
 
@@ -35,3 +37,9 @@ print(d['sai'])
 
 
 no indexing positions , we only use keys.
+keys must always be immutable,which cannot be changed
+
+variable_name.update({'name':20})
+d['age']=20
+
+----------------------------------------------------------------------------------------------------------------------------------------------
