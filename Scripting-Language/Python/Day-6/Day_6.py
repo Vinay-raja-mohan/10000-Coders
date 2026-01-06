@@ -177,3 +177,53 @@ print(b1)              # 2
 print("-----------------------------------------------------------------------------")
 
 
+#Membership Operators"
+# in
+my_list = [1, 2, 3, 4, 5]
+res = 3 in my_list
+print(res)             # True
+print("----------------")
+
+v = 'hello'
+res2 = 'z' in v
+print(res2)           # False
+print("----------------")
+
+# not in
+my_dict = {'a': 1, 'b': 2}
+res3 = 'c' not in my_dict
+print(res3)           # True
+print("----------------")
+
+w = 'world'
+res4 = 'o' not in w
+print(res4)           # False
+print("-----------------------------------------------------------------------------")
+
+
+"Identity Operators"
+# is
+a = [1, 2, 3]
+b = a
+print(a is b)         # True
+print("----------------")
+
+c = 500
+d = 500
+print(c is d)         # False
+print("----------------")
+
+# is not
+e = 500
+f = 500
+print(e is not f)     # True
+print("----------------")
+
+g = [4, 5, 6]
+h = g
+print(g is not h)     # False
+
+i = [10,20,30]
+j = [10,20,30]
+print(i is not j)     # True
+print("-----------------------------------------------------------------------------")

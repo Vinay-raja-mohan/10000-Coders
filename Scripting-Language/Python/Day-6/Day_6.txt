@@ -3,4 +3,23 @@ Today we are learning about Operators
 2. Assignment Operators
 +=, -=, *=, /=, //=, **=, %=
 
+3. Special Operators
+    * Membership Operators
+        in and not in
+        Check weather a string or a number exists in a string or a set/list/dict(key) respectively.
+        
+    * Identity Operators
+        Address from -5 to 255 saves in same address , -6 to - infinity and 256 to infinity dont save in same address
+        ex a=10
+           b=10
+           id(a) #123
+           id(b) #123 
+        ex a=258
+           b=258
+           id(a) #123
+           id(b) #126
+
+        this operators check the address of these datatypes;
+        IS AND IS NOT
+
 
