@@ -117,9 +117,63 @@ print("----------------")
 v = 20
 w = 6
 print(v % w)          # 2 gives the remainder
-print("----------------")
+print("-----------------------------------------------------------------------------")
 
 # Modulus in other data types
 # str8 = "Hello"
 # str9 = "World"
 # print(str8 % str9)    # This will raise an error as modulus is not defined for strings
+
+
+"Assignment Operators"
+
+#+=
+x1 = 5
+x2 = 10
+x1 += x2
+print(x1)              # 15
+print("----------------")
+
+#-=
+y1 = 20
+y2 = 8
+y1 -= y2
+print(y1)              # 12
+print("----------------")
+
+#*=
+z1 = 4
+z2 = 3
+z1 *= z2
+print(z1)              # 12
+print("----------------")
+
+#/=
+a1 = 15
+a2 = 3
+a1 /= a2
+print(a1)              # 5.0
+print("----------------")
+
+#//=
+b1 = 17
+b2 = 3
+b1 //= b2
+print(b1)              # 5
+print("----------------")
+
+#**=
+b1 = 2
+b2 = 3
+b1 **= b2
+print(b1)              # 8
+print("----------------")
+
+#%=
+b1 = 20
+b2 = 6
+b1 %= b2
+print(b1)              # 2
+print("-----------------------------------------------------------------------------")
+
+

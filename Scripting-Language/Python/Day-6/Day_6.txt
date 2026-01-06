@@ -1,1 +1,6 @@
 Today we are learning about Operators
+
+2. Assignment Operators
++=, -=, *=, /=, //=, **=, %=
+
+
