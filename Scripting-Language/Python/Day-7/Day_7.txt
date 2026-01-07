@@ -9,4 +9,24 @@ Logical Operators
 'not'- converts true to False
 
 
+Bitwise Operators
+&(AND) - multiples two inputs by converting them into binary.
+    1*1 = 1 , 1*0 = 0 , 0*0 = 0 , 0*1 = 0
+
+|(OR) - add the inputs by converting them in binary.
+    1+1 = 1 , 1+0 = 1 , 0+1 = 1 , 0+0 = 0
+
+^(XOR) - add the inputs by converting them in binary expect 1 ^ 1 =0.
+    1+1 = 0 , 1+0 = 1 , 0+1 = 1 , 0+0=0
+
+~(NOT) - add a number to the variable and converts the sign to minus
+    a = 6 , ~6 = -7
+
+<<(LEFT SHIFT) - move the number to the left with the given number of zeros.  || adds the given number of zeros at the end.
+    5 << 2 = 101 ==> 10100 ==> 16+4 = 20
+
+>>(RIGHT SHIFT) - move that many times to the right side of the binay value.
+    5>>2  = 00101 ==> 00010 ==> 00001 == 1
+
+
 
