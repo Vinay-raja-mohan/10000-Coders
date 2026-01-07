@@ -1,0 +1,8 @@
+Comparision Operators
+> , < , >= , <= , == , !=
+
+Only prints the output in boolean i.e True/False
+
+
+
+
