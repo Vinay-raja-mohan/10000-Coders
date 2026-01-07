@@ -3,6 +3,10 @@ Comparision Operators
 
 Only prints the output in boolean i.e True/False
 
+Logical Operators
+'and'- only runs when both the conditons are True 
+'or' - runs when one condition is true among 2 conditons 
+'not'- converts true to False
 
 
 
