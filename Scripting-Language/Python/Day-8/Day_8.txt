@@ -1,0 +1,8 @@
+Conditional Statments
+Check the Statments and perform a action according to it.
+
+There are maily 4 types of conditional Statments.
+1.  if Statment
+2.  if else Statment
+3.  if elif Statment
+4.  nested if Statment
