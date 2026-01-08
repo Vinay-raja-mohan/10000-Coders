@@ -51,7 +51,7 @@ vinay     15
 
 UPDATE Table_Name
 SET column_name1 = New_Value1,column_name1\2 = New_Value2
-WHERE Old_value1,Old_value2
+WHERE column_name=coorespoding element;
 
 --------------------------------------------------------------------------
 OFF SAFE MODE

@@ -24,7 +24,7 @@ ALTER :-
 rename :- rename old table name to new table name.
     RENAME TABLE table_name TO NewTableName;
 
-truncate :- deletes the data inside the table but not the headings like ccolumns names ie- structure.
+truncate :- deletes the data inside the table but not the headings like columns names ie- structure.
     TRUNCATE TABLE table_name;
 
 drop :- deletes the whole table no records will be left out
