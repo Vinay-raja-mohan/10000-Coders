@@ -1,0 +1,106 @@
+Type '\help' or '\?' for help; '\quit' to exit.
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+ MySQL  SQL > \connect root@localhost
+Creating a session to 'root@localhost'
+Fetching global names for auto-completion... Press ^C to stop.
+Your MySQL connection id is 12 (X protocol)
+Server version: 8.0.44 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+ MySQL  localhost:33060+ ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| 84r                |
+| demodb             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| temp1              |
++--------------------+
+7 rows in set (0.0015 sec)
+ MySQL  localhost:33060+ ssl  SQL > use demodb;
+Default schema set to `demodb`.
+Fetching global names, object names from `demodb` for auto-completion... Press ^C to stop.
+ MySQL  localhost:33060+ ssl  demodb  SQL > create table Students(student_id int ,name varchar(50) not null,email varchar(100) unique,phone bigint)
+                                         -> ;
+Query OK, 0 rows affected (0.0618 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL > desc students;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| student_id | int          | YES  |     | NULL    |       |
+| name       | varchar(50)  | NO   |     | NULL    |       |
+| email      | varchar(100) | YES  | UNI | NULL    |       |
+| phone      | bigint       | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.0076 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL > show tables;
++------------------+
+| Tables_in_demodb |
++------------------+
+| employee         |
+| payment          |
+| student          |
+| students         |
+| vinay            |
++------------------+
+5 rows in set (0.0025 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL > create table employee(emp_id int,username varchar(50) not null and unique,password varchar(50) not null,department varchar(50));
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and unique,password varchar(50) not null,department varchar(50))' at line 1
+ MySQL  localhost:33060+ ssl  demodb  SQL > create table employee(emp_id int,username varchar(50) not null,password varchar(50) not null,department varchar(50));
+ERROR: 1050: Table 'employee' already exists
+ MySQL  localhost:33060+ ssl  demodb  SQL > create table employees(emp_id int,username varchar(50) not null,password varchar(50) not null,department varchar(50));
+Query OK, 0 rows affected (0.0353 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL > alter table employees modify column password varchar(50) unique;
+Query OK, 0 rows affected (0.0830 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  demodb  SQL > desc employees;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_id     | int         | YES  |     | NULL    |       |
+| username   | varchar(50) | NO   |     | NULL    |       |
+| password   | varchar(50) | YES  | UNI | NULL    |       |
+| department | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0019 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL > alter table employee modify column password varchar(50) unique and not null;
+
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and not null' at line 1
+ MySQL  localhost:33060+ ssl  demodb  SQL > alter table employee modify column password varchar(50) unique not null;
+ERROR: 1054: Unknown column 'password' in 'employee'
+ MySQL  localhost:33060+ ssl  demodb  SQL > alter table employees modify column password varchar(50) unique not null;
+Query OK, 0 rows affected, 1 warning (0.0746 sec)
+
+Records: 0  Duplicates: 0  Warnings: 1
+Warning (code 1831): Duplicate index 'password_2' defined on the table 'demodb.employees'. This is deprecated and will be disallowed in a future release.
+ MySQL  localhost:33060+ ssl  demodb  SQL > desc employees;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_id     | int         | YES  |     | NULL    |       |
+| username   | varchar(50) | NO   |     | NULL    |       |
+| password   | varchar(50) | NO   | PRI | NULL    |       |
+| department | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.0021 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL > insert into employees(username,password) values ("hello","hi"),("hello","hi");
+ERROR: 1062: Duplicate entry 'hi' for key 'employees.password'
+ MySQL  localhost:33060+ ssl  demodb  SQL > insert into employees(username,password) values ("hello","hi"),("hello","hi_2");
+Query OK, 2 rows affected (0.0116 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+ MySQL  localhost:33060+ ssl  demodb  SQL > show * from employees;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from employees' at line 1
+ MySQL  localhost:33060+ ssl  demodb  SQL > select * from employees;
++--------+----------+----------+------------+
+| emp_id | username | password | department |
++--------+----------+----------+------------+
+|   NULL | hello    | hi       | NULL       |
+|   NULL | hello    | hi_2     | NULL       |
++--------+----------+----------+------------+
+2 rows in set (0.0012 sec)
+ MySQL  localhost:33060+ ssl  demodb  SQL >

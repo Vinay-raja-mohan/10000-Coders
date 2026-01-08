@@ -1,0 +1,15 @@
+1. Create a table Students with the following columns:
+student_id
+name
+email
+phone
+Apply NOT NULL constraint on name and UNIQUE constraint on email.
+
+2. Write the SQL query to create this table.
+Create a table Employees with the following columns:
+emp_id
+username
+password
+department
+Apply NOT NULL constraint on username and password, and UNIQUE constraint on username.
+Write the SQL query and try inserting duplicate usernames to observe the
