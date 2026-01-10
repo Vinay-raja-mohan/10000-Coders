@@ -1,0 +1,13 @@
+Loops
+A loop is used when we know how many times we want to repeat something
+
+syntax:
+  for variable_name in range(n):
+      code_body
+
+  for variable_name in sequence:
+      code_body
+  
+Examples:
+  for i in 'python':
+    print(i)

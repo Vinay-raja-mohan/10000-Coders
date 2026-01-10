@@ -2,6 +2,7 @@ Tuple DataType
 
 Tuple is immutable where the values cant be updated or removed or added.
 Supports indexing and slicing.
+can have duplicates
 
 We can declare tuple in the following ways.
 j=()
