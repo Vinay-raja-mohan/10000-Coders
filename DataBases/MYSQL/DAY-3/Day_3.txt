@@ -28,4 +28,5 @@ syntax:
 Limit Clause
 to limit the number of elements to print or show
 used in SELECT
+SELECT * FROM Table_Name LIMIT requried_Number;
 
