@@ -44,3 +44,43 @@ if(a+b>c and b+c>a and c+a>b):
   s=(a+b+c)/2
   area = math.sqrt(s*(s-a)*(s-b)*(s-c))
   print("area =",area)
+
+"Question 5"
+x = int(input())
+y = int(input())
+z = int(input())
+
+if a>b and a>c:
+  print("Largest",a)
+elif b>a and b>c:
+  print("Largest",b)
+else:
+  print("Largest",c)
+
+if a<b and a<c:
+  print("Smallest",a)
+elif b<a and b<c:
+  print("Smallest",b)
+else:
+  print("Smallest",c)
+
+if(a==b and b==c):
+  print("Equal")
+  
+"Question 6"
+ch = input()
+
+if ch.isupper():
+    print("Uppercase letter")
+elif ch.islower():
+    print("Lowercase letter")
+elif ch.isdigit():
+    print("Digit")
+else:
+    print("Special character")
+
+"Question 7"
+
+
+
+

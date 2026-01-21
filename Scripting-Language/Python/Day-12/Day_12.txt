@@ -1,0 +1,12 @@
+Nested For loops for star patterns
+
+always use end = "" to print the loop in the same line
+
+for i in range (1,5):
+  print(*,end="")     #****
+
+for i in range (1,5):
+  print(*,end=" ")     #* * * *
+
+While Loop
+When we dont know the range but we know the condition we use while loops
