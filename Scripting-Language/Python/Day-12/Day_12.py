@@ -28,3 +28,40 @@
 #   print()
 
 "While Loop"
+# a=0
+# while a<10:
+#   print(a,end=" ")
+#   a+=1
+
+# a=-1
+# while a>=-10:
+#   print(a,end=" ")
+#   a-=1
+
+# a=-10
+# while a<=-1:
+#   print(a,end=" ")
+#   a+=1
+
+# j=121
+# temp=j
+# sum=0
+# while j>0:
+#   a=j%10
+#   sum=sum*10+a
+#   j=j//10
+# print(sum)
+
+# if(temp==sum):
+#   print("Palindrome")
+
+j = 23456
+sum=0
+while j>0:
+  d = j%10
+  j//=10
+
+
+  if(d%2==0):
+    sum+=d
+print(sum)
