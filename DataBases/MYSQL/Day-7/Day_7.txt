@@ -1,0 +1,13 @@
+PRIMARY KEY
+-It is a combination of both NOT NULL and UNIQUE Constraints.
+-It should not  have any NULL values and all the values should be UNIQUE.
+
+FORIEGN KEY
+-To combine more than one table.
+
+JOINS 
+Fetches data from two or more tables together
+
+Types of Joins:
+INNER JOIN - gets matching data from both tables.
+              only matching records from both tables.
