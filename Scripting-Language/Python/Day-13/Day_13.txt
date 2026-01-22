@@ -1,0 +1,3 @@
+input function
+- To take input from the user via keyboard
+- Always returns a string , even if the user enters number
