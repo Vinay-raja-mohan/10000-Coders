@@ -1,0 +1,6 @@
+Control Statments/Jumping Statments:
+This changes the flow of the execution
+
+break -> terminates the execution
+continue -> skips to the current iternation and goes to the next one
+pass -> just a place holder,does nthg
