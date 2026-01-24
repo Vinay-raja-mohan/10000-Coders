@@ -43,3 +43,5 @@ select s_name , courses.c_name from students right join courses on students.fc_i
 
 select courses.c_name,count(s_name) from students right join courses on students.fc_id = courses.c_id group by courses.c_name;
 
+
+
