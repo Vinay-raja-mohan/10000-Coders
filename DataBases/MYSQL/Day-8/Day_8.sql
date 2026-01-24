@@ -27,7 +27,7 @@ insert into students values(101,'sai','2025-12-20',10),(102,'kumar','2026-01-20'
 
 select * from students;
 
-select * from students right join courses on students.fc_id = courses.c_id;
+select * from students inner join courses on students.fc_id = courses.c_id;
 
 select * from students right join  courses on students.fc_id = courses.c_id where students.fc_id is null;
 
@@ -38,3 +38,8 @@ insert into students values(104,'raj','2026-01-20',11);
 update students set d_join = "2026-09-18" where s_id = 104;
 
 select courses.c_name,max(d_join) from students right join courses on students.fc_id = courses.c_id group by courses.c_name;
+
+select s_name , courses.c_name from students right join courses on students.fc_id = courses.c_id where d_join > "2020-01-01";
+
+select courses.c_name,count(s_name) from students right join courses on students.fc_id = courses.c_id group by courses.c_name;
+

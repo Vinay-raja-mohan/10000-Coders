@@ -1,0 +1,33 @@
+String Functions
+
+-To make all the charaters CAPTIAL WORDS
+-Variable_name.upper()
+
+-To make all the charaters SMALL WORDS
+-Variable_name.lower()
+
+-To make all the characters to theirs opposite case use
+-variable_name.swapcase()
+
+to print the ASCII VALUES of a alphabet
+ord(Variable_name) #prints number
+chr(Number) #print alphabet
+
+-how to check if the word ends with certain alphabets
+-Variable_name.endswith("what_to-check)  #k.endswith("a")
+
+-how to check if the word starts with a certain alphabets
+-Variable_name.startswith("What_to_check) #k.startswith("S")
+
+
+-to find the count of the word:
+-Variable_name.count("what to search for")
+
+-to convert a string to a perferct list
+-variable_name.split()
+
+-Tell us wheater a alphabet is upper
+-Variable_name.isupper()
+
+-Tells us wheater a alphabet is small
+-Variable_name.islower()
