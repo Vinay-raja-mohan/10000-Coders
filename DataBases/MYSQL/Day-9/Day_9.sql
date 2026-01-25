@@ -20,3 +20,6 @@ delete from orders where or_id = 204;
 
 select * from customer left join orders on customer.c_id = orders.fc_id;
 
+select customer.* from customer left JOIN orders on customer.c_id = orders.fc_id where orders.fc_id is null;
+
+select c_name,orders.ord_amount from customer LEFT JOIN orders on customer.c_id = orders.fc_id where orders.or_id is null;
