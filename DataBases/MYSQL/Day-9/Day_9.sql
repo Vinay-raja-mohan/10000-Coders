@@ -1,3 +1,4 @@
+-- Active: 1767583816891@@127.0.0.1@3306@demodb
 select courses.c_name,count(s_name) from students RIGHT join courses on students.fc_id = courses.c_id group by courses.c_name;
 
 select s_id,s_name,d_join,courses.c_name from students RIGHT JOIN courses on students.fc_id = courses.c_id where d_join > "2025-10-01";
@@ -23,3 +24,7 @@ select * from customer left join orders on customer.c_id = orders.fc_id;
 select customer.* from customer left JOIN orders on customer.c_id = orders.fc_id where orders.fc_id is null;
 
 select c_name,orders.ord_amount from customer LEFT JOIN orders on customer.c_id = orders.fc_id where orders.or_id is null;
+
+select * from customer LEFT join orders on customer.c_id = orders.fc_id where orders.fc_id is null
+union
+select * from customer RIGHT JOIN orders on customer.c_id = orders.fc_id where customer.c_id is null;

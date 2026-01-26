@@ -20,6 +20,8 @@ ALTER :-
         ALTER TABLE table_name RENAME COLUMN column_name TO newColumnName;
     5. Drop - Delete a column
         ALTER TABLE table_name DROP COLUMN column_name;
+    6. CHANGE - Changes the column name and data type
+        ALTER TABLE table_name CHANGE COLUMN column_name NewColumnName dataType;
 
 rename :- rename old table name to new table name.
     RENAME TABLE table_name TO NewTableName;

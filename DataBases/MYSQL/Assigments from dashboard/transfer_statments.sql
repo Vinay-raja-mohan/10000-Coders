@@ -43,7 +43,40 @@ select  e_name,department.d_name from employee INNER JOIN department on employee
 
 select e_name,e_salary,department.d_name from employee INNER JOIN department on employee.fd_id= department.d_id ORDER BY department.d_name desC;
 
+--- RIGHT JOIN ---
+create table course(c_id int PRIMARY key,c_name varchar(50),duration int);
+insert into course values (101,"Python",3),(102,"java",4),(103,"Sql",2),(104,"AI",6),(105,"web dev",5);
 
+create table student (s_id int PRIMARY key,s_name varchar(50),sc_id int,j_date date);
+
+insert into student
+values (1,"Amit",101,"2024-01-10"),
+        (2,"Ravi",102,"2023-12-15"),
+        (3,"Neha",101,"2024-02-05"),
+        (4,"Pooja",103,"2024-03-01"),
+        (5,"Kiran",102,"2024-01-25"),
+        (6,"Anvi",106,"2024-10-10");
+
+select * from course right join student on course.c_id = student.sc_id;
+
+select course.c_name,s_name from student right join course on course.c_id = student.sc_id;
+
+select c.c_name , s.s_name from student as s right join course as c on c.c_id = s.sc_id where s_name is null;
+
+select course.c_name,s_name from student right join course on course.c_id = student.sc_id;
+
+select course.c_name,count(student.s_id) from student right join course on course.c_id = student.sc_id group by course.c_name;
+
+select course.c_name ,max(j_date) from student right join course on course.c_id = student.sc_id group by course.c_name;
+
+select c_name,student.* from course RIGHT join student on student.sc_id = course.c_id where c_name is not null;
+
+select course.c_name,s_name,j_date from student right join course
+on course.c_id = student.sc_id where j_date > "2024-01-01";
+
+select course.c_name, s_name from student right join course on course.c_id = student.sc_id 
+where student.s_name is not null
+order by course.c_name asc ;
 
 
 
