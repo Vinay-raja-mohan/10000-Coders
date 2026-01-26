@@ -78,5 +78,6 @@ select course.c_name, s_name from student right join course on course.c_id = stu
 where student.s_name is not null
 order by course.c_name asc ;
 
+show tables;
 
 
