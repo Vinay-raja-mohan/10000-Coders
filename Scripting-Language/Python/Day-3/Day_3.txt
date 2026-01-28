@@ -27,7 +27,7 @@ String Data Type
 Non-Primitive Data Types
   1.LIST
     Stores Multiple Values In a Single Variable. -Hetrogenous
-    Values can be changes - Mutable
+    Values can be changed - Mutable
     Can add New values
     Ordered
     Can Store Multiple DataTypes - Hetrogenous
