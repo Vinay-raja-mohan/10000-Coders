@@ -83,6 +83,11 @@ function handleBackspace() {
     }
 }
 
+function inputPercent() {
+    const value = parseFloat(calculator.displayValue);
+    calculator.displayValue = String(value / 100);
+}
+
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
     const { target } = event;
@@ -114,6 +119,12 @@ keys.addEventListener('click', (event) => {
         return;
     }
 
+    if (target.classList.contains('percentage')) {
+        inputPercent();
+        updateDisplay();
+        return;
+    }
+
     inputDigit(target.value);
     updateDisplay();
 });
@@ -139,6 +150,9 @@ document.addEventListener('keydown', (event) => {
         updateDisplay();
     } else if (key === 'Escape') {
         resetCalculator();
+        updateDisplay();
+    } else if (key === '%') {
+        inputPercent();
         updateDisplay();
     }
 });

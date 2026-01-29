@@ -60,7 +60,6 @@ button:hover {
 }
 
 .equal-sign {
-    grid-row: span 2;
     background-color: #2ecc71;
     color: white;
     border-color: #27ae60;
@@ -78,6 +77,15 @@ button:hover {
 
 .all-clear:hover {
     background-color: #c0392b;
+}
+
+.percentage {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.percentage:hover {
+    background-color: #e0e0e0;
 }
 
 .delete-btn {
