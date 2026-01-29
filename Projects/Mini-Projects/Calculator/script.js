@@ -117,3 +117,28 @@ keys.addEventListener('click', (event) => {
     inputDigit(target.value);
     updateDisplay();
 });
+
+document.addEventListener('keydown', (event) => {
+    const { key } = event;
+
+    if (/[0-9]/.test(key)) {
+        inputDigit(key);
+        updateDisplay();
+    } else if (key === '.') {
+        inputDecimal(key);
+        updateDisplay();
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        handleOperator(key);
+        updateDisplay();
+    } else if (key === 'Enter' || key === '=') {
+        event.preventDefault(); // Prevent default action for Enter key
+        handleOperator('=');
+        updateDisplay();
+    } else if (key === 'Backspace') {
+        handleBackspace();
+        updateDisplay();
+    } else if (key === 'Escape') {
+        resetCalculator();
+        updateDisplay();
+    }
+});
