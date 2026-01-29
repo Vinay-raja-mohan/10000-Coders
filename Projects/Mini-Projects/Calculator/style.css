@@ -80,10 +80,16 @@ button:hover {
     background-color: #c0392b;
 }
 
-.zero-btn {
-    grid-column: span 2;
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border-color: #c0392b;
 }
 
-.operator-plus {
-    grid-row: span 2;
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.zero-btn {
+    grid-column: span 2;
 }

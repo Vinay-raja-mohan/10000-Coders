@@ -18,7 +18,7 @@ function inputDigit(digit) {
 
 function inputDecimal(dot) {
     if (calculator.waitingForSecondOperand === true) return;
-  
+
     if (!calculator.displayValue.includes(dot)) {
         calculator.displayValue += dot;
     }
@@ -69,6 +69,20 @@ function updateDisplay() {
 
 updateDisplay();
 
+function handleBackspace() {
+    if (calculator.waitingForSecondOperand) {
+        return;
+    }
+
+    // If it's single digit, change to '0'
+    if (calculator.displayValue.length === 1) {
+        calculator.displayValue = '0';
+    } else {
+        // Remove last character
+        calculator.displayValue = calculator.displayValue.slice(0, -1);
+    }
+}
+
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', (event) => {
     const { target } = event;
@@ -90,6 +104,12 @@ keys.addEventListener('click', (event) => {
 
     if (target.classList.contains('all-clear')) {
         resetCalculator();
+        updateDisplay();
+        return;
+    }
+
+    if (target.classList.contains('delete-btn')) {
+        handleBackspace();
         updateDisplay();
         return;
     }
