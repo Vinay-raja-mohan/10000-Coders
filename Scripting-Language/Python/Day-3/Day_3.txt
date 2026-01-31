@@ -13,6 +13,7 @@ Complex Data Type
 String Data Type
   It is a immutable data type
   it is stored between quotation marks
+  can also be ' ' ," " ,""" """
   iterable
   slicing
   allows duplicates
