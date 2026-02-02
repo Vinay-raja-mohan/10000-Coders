@@ -1,0 +1,25 @@
+String Functions
+
+str = 'i am a coder'
+
+ENDSWITH()
+str.endswith("er") => return TRUE if it really ends with er.
+
+CAPITALIZE()
+str.capitalize() => Caps the 1st char
+
+REPLACE()
+str.replace(old,new) => replaces all old occerences 
+ex-
+   str.replace('a','z') => i zm z coder
+
+FIND()
+str.find(word) => gives index when it appears 1st time.
+str.find('a') => 2
+str.find('k') => -1 because it is not found
+
+COUNT()
+str.count("a") => tells how many time a char repeats
+
+
+

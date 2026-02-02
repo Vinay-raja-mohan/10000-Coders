@@ -36,3 +36,17 @@ l1 = [1,2,3]
 l2 = [10,20,30]
 
 print(l1+l2)
+
+
+str = "vinay"
+print(str.endswith("ay"))
+
+print(str.capitalize())
+
+f_name = input("Enter First Name:")
+print(len(f_name))
+
+
+str = "$$$$$fabjvyfw$$  VVBNBVCDSDXC$X C$V$"
+
+print(str.count("$"))
