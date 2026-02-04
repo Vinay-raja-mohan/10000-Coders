@@ -1,3 +1,39 @@
+:root {
+    --bg-color: #121212;
+    --calc-bg-color: #1e1e1e;
+    --screen-bg-color: #2d2d2d;
+    --text-color: #ffffff;
+    --btn-bg: #333;
+    --btn-hover: #444;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+
+    /* Accents */
+    --operator-bg: #ff9f43;
+    --operator-hover: #ffa550;
+    --equal-bg: #2ecc71;
+    --equal-hover: #27ae60;
+    --danger-bg: #e74c3c;
+    --danger-hover: #c0392b;
+    --secondary-bg: #a5b1c2;
+    --secondary-hover: #d1d8e0;
+}
+
+.light-mode {
+    --bg-color: #f0f2f5;
+    --calc-bg-color: #ffffff;
+    --screen-bg-color: #f1f3f4;
+    --text-color: #202124;
+    --btn-bg: #f1f3f4;
+    --btn-hover: #e8eaed;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* Accents need to be readable */
+    --operator-bg: #ff9f43;
+    /* Keep or adjust */
+    --secondary-bg: #d1d8e0;
+    --secondary-hover: #bdc3c7;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -5,34 +41,53 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #121212;
-    /* Dark background */
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .calculator {
     border: none;
     border-radius: 20px;
-    background-color: #1e1e1e;
-    /* Darker calculator body */
+    background-color: var(--calc-bg-color);
     padding: 25px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 30px var(--shadow-color);
     width: 320px;
+    position: relative;
+    /* For toggler positioning */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.theme-toggler {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.theme-toggler:hover {
+    opacity: 1;
 }
 
 .calculator-screen {
     width: 100%;
     height: 80px;
-    background-color: #2d2d2d;
+    background-color: var(--screen-bg-color);
     border: none;
     border-radius: 10px;
     text-align: right;
     padding: 0 20px;
     box-sizing: border-box;
     margin-bottom: 25px;
+    margin-top: 20px;
+    /* Space for toggler */
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-color);
     font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .calculator-keys {
@@ -46,76 +101,72 @@ button {
     font-size: 1.4rem;
     border: none;
     border-radius: 50px;
-    /* Circular/Pill shape */
-    background-color: #333;
-    color: #fff;
+    background-color: var(--btn-bg);
+    color: var(--text-color);
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #444;
+    background-color: var(--btn-hover);
     transform: translateY(-2px);
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 button:active {
     transform: translateY(1px);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Operators (Right column) */
 .operator {
-    background-color: #ff9f43;
+    background-color: var(--operator-bg);
     color: white;
+    /* Always white text for contrast on logic buttons */
 }
 
 .operator:hover {
-    background-color: #ffa550;
+    background-color: var(--operator-hover);
 }
 
-/* Equal Sign (Bottom Right) */
+/* Equal Sign */
 .equal-sign {
-    background-color: #2ecc71;
+    background-color: var(--equal-bg);
     color: white;
 }
 
 .equal-sign:hover {
-    background-color: #27ae60;
+    background-color: var(--equal-hover);
 }
 
-/* Top functional buttons (AC, DEL, %) */
-.all-clear {
-    background-color: #e74c3c;
-    color: white;
-}
-
-.all-clear:hover {
-    background-color: #c0392b;
-}
-
+/* Actions */
+.all-clear,
 .delete-btn {
-    background-color: #e74c3c;
+    background-color: var(--danger-bg);
     color: white;
 }
 
+.all-clear:hover,
 .delete-btn:hover {
-    background-color: #c0392b;
+    background-color: var(--danger-hover);
 }
 
 .percentage {
-    background-color: #a5b1c2;
+    background-color: var(--secondary-bg);
     color: #333;
+    /* Dark text for secondary in Dark Mode */
+}
+
+.light-mode .percentage {
+    color: var(--text-color);
 }
 
 .percentage:hover {
-    background-color: #d1d8e0;
+    background-color: var(--secondary-hover);
 }
 
-/* Zero button spanning 2 columns */
 .zero-btn {
     grid-column: span 2;
     border-radius: 50px;
-    /* Pillow shape */
 }

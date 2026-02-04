@@ -5,6 +5,16 @@ const calculator = {
     operator: null,
 };
 
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    const toggler = document.querySelector('.theme-toggler');
+    if (document.body.classList.contains('light-mode')) {
+        toggler.textContent = '🌙';
+    } else {
+        toggler.textContent = '☀️';
+    }
+}
+
 function inputDigit(digit) {
     const { displayValue, waitingForSecondOperand } = calculator;
 
