@@ -51,17 +51,71 @@ function handleOperator(nextOperator) {
 
         calculator.displayValue = String(result);
         calculator.firstOperand = result;
+
+        // Save to History
+        if (operator !== '=') {
+            // Logic for intermediate steps if needed, but for simple calc usually only on =
+        }
     }
 
     calculator.waitingForSecondOperand = true;
     calculator.operator = nextOperator;
 }
 
+// History Feature
+let history = [];
+
+function toggleHistory() {
+    document.querySelector('.history-panel').classList.toggle('open');
+}
+
+function clearHistory() {
+    history = [];
+    renderHistory();
+}
+
+function addToHistory(expression, result) {
+    history.unshift({ expression, result });
+    if (history.length > 20) history.pop(); // Keep last 20
+    renderHistory();
+}
+
+function renderHistory() {
+    const list = document.querySelector('.history-list');
+    list.innerHTML = '';
+
+    history.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'history-item';
+        div.innerHTML = `
+            <span class="expression">${item.expression}</span>
+            <span class="result">= ${item.result}</span>
+        `;
+        list.appendChild(div);
+    });
+}
+
 const performCalculation = {
-    '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
-    '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
-    '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
-    '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+    '/': (firstOperand, secondOperand) => {
+        const result = firstOperand / secondOperand;
+        addToHistory(`${firstOperand} ÷ ${secondOperand}`, result);
+        return result;
+    },
+    '*': (firstOperand, secondOperand) => {
+        const result = firstOperand * secondOperand;
+        addToHistory(`${firstOperand} × ${secondOperand}`, result);
+        return result;
+    },
+    '+': (firstOperand, secondOperand) => {
+        const result = firstOperand + secondOperand;
+        addToHistory(`${firstOperand} + ${secondOperand}`, result);
+        return result;
+    },
+    '-': (firstOperand, secondOperand) => {
+        const result = firstOperand - secondOperand;
+        addToHistory(`${firstOperand} - ${secondOperand}`, result);
+        return result;
+    },
     '=': (firstOperand, secondOperand) => secondOperand
 };
 

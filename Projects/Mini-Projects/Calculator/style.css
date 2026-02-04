@@ -58,10 +58,9 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Removed .theme-toggler absolute styles, handled in .header-icons */
+
 .theme-toggler {
-    position: absolute;
-    top: 15px;
-    left: 20px;
     cursor: pointer;
     font-size: 1.2rem;
     color: var(--text-color);
@@ -82,8 +81,7 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
     margin-bottom: 25px;
-    margin-top: 20px;
-    /* Space for toggler */
+    margin-top: 0;
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 300;
@@ -166,7 +164,105 @@ button:active {
     background-color: var(--secondary-hover);
 }
 
-.zero-btn {
-    grid-column: span 2;
-    border-radius: 50px;
+/* Header Icons */
+.header-icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    /* Space above screen */
+}
+
+.theme-toggler,
+.history-toggler {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.theme-toggler:hover,
+.history-toggler:hover {
+    opacity: 1;
+}
+
+/* History Panel */
+.history-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--calc-bg-color);
+    border-radius: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    /* Hidden by default */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history-panel.open {
+    transform: translateY(0);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.close-history {
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.history-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.history-item {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-align: right;
+}
+
+.light-mode .history-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.expression {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.result {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.clear-history {
+    background-color: var(--danger-bg);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-top: auto;
+    width: 100%;
 }

@@ -10,7 +10,18 @@
 
 <body>
     <div class="calculator">
-        <span class="theme-toggler" onclick="toggleTheme()">☀️</span>
+        <div class="header-icons">
+            <span class="theme-toggler" onclick="toggleTheme()">☀️</span>
+            <span class="history-toggler" onclick="toggleHistory()">🕒</span>
+        </div>
+        <div class="history-panel">
+            <div class="history-header">
+                <span>History</span>
+                <span class="close-history" onclick="toggleHistory()">&times;</span>
+            </div>
+            <div class="history-list"></div>
+            <button class="clear-history" onclick="clearHistory()">Clear History</button>
+        </div>
         <input type="text" class="calculator-screen" value="" disabled />
         <div class="calculator-keys">
             <button type="button" class="all-clear" value="all-clear">AC</button>
