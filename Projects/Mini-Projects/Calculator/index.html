@@ -10,44 +10,50 @@
 
 <body>
     <div class="calculator">
-        <div class="header-icons">
-            <span class="theme-toggler" onclick="toggleTheme()">☀️</span>
-            <span class="history-toggler" onclick="toggleHistory()">🕒</span>
-        </div>
-        <div class="history-panel">
-            <div class="history-header">
-                <span>History</span>
-                <span class="close-history" onclick="toggleHistory()">&times;</span>
+        <div class="calculator-inner">
+            <!-- Front Side: Calculator -->
+            <div class="calculator-front">
+                <div class="header-icons">
+                    <span class="theme-toggler" onclick="toggleTheme()">☀️</span>
+                    <span class="history-toggler" onclick="toggleHistory()">🕒</span>
+                </div>
+                <input type="text" class="calculator-screen" value="" disabled />
+                <div class="calculator-keys">
+                    <button type="button" class="all-clear" value="all-clear">AC</button>
+                    <button type="button" class="delete-btn" value="delete">DEL</button>
+                    <button type="button" class="operator" value="/">&divide;</button>
+                    <button type="button" class="operator" value="*">&times;</button>
+
+                    <button type="button" value="7">7</button>
+                    <button type="button" value="8">8</button>
+                    <button type="button" value="9">9</button>
+                    <button type="button" class="operator" value="-">-</button>
+
+                    <button type="button" value="4">4</button>
+                    <button type="button" value="5">5</button>
+                    <button type="button" value="6">6</button>
+                    <button type="button" class="operator" value="+">+</button>
+
+                    <button type="button" value="1">1</button>
+                    <button type="button" value="2">2</button>
+                    <button type="button" value="3">3</button>
+                    <button type="button" class="percentage" value="%">%</button>
+
+                    <button type="button" class="zero-btn" value="0">0</button>
+                    <button type="button" class="decimal" value=".">.</button>
+                    <button type="button" class="equal-sign operator" value="=">=</button>
+                </div>
             </div>
-            <div class="history-list"></div>
-            <button class="clear-history" onclick="clearHistory()">Clear History</button>
-        </div>
-        <input type="text" class="calculator-screen" value="" disabled />
-        <div class="calculator-keys">
-            <button type="button" class="all-clear" value="all-clear">AC</button>
-            <button type="button" class="delete-btn" value="delete">DEL</button>
-            <button type="button" class="operator" value="/">&divide;</button>
-            <button type="button" class="operator" value="*">&times;</button>
 
-            <button type="button" value="7">7</button>
-            <button type="button" value="8">8</button>
-            <button type="button" value="9">9</button>
-            <button type="button" class="operator" value="-">-</button>
-
-            <button type="button" value="4">4</button>
-            <button type="button" value="5">5</button>
-            <button type="button" value="6">6</button>
-            <button type="button" class="operator" value="+">+</button>
-
-
-            <button type="button" value="1">1</button>
-            <button type="button" value="2">2</button>
-            <button type="button" value="3">3</button>
-            <button type="button" class="percentage" value="%">%</button>
-
-            <button type="button" class="zero-btn" value="0">0</button>
-            <button type="button" class="decimal" value=".">.</button>
-            <button type="button" class="equal-sign operator" value="=">=</button>
+            <!-- Back Side: History -->
+            <div class="calculator-back">
+                <div class="history-header">
+                    <span>History</span>
+                    <span class="close-history" onclick="toggleHistory()">↩️</span>
+                </div>
+                <div class="history-list"></div>
+                <button class="clear-history" onclick="clearHistory()">Clear History</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

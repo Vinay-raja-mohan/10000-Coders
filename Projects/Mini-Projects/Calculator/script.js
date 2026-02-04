@@ -66,7 +66,7 @@ function handleOperator(nextOperator) {
 let history = [];
 
 function toggleHistory() {
-    document.querySelector('.history-panel').classList.toggle('open');
+    document.querySelector('.calculator-inner').classList.toggle('flipped');
 }
 
 function clearHistory() {
