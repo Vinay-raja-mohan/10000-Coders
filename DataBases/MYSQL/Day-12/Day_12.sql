@@ -1,0 +1,6 @@
+---Subquery - a query inside another query
+--- Single row - conditon will be formed as a single row and single column (=,!=,<,>,<=,>=,(assignment operators))
+---Multi row - condition will return a s single column and more than one row (in, not in=(membership operators))
+---Muilt column -
+---Nested
+---Correlated

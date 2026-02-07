@@ -58,13 +58,72 @@
 #   print("Not anagram")
 # 
 # reverse each word in a string
-k = "reverse each word string".split()
+# k = "reverse each word string".split()
 
-for i in range(len(k)):
-  temp3 = ''
-  for j in k[i]:
-    temp3 = j + temp3
-  k[i] = temp3
-print(" ".join(k))
+# for i in range(len(k)):
+#   temp3 = ''
+#   for j in k[i]:
+#     temp3 = j + temp3
+#   k[i] = temp3
+# print(" ".join(k))
+# 
+# k = "cap starting of each start"
+# temp1 = ""
+# for x in range(0,len(k)):
+#   if x == 0:
+#     temp1+=k[x].upper()
+#   elif k[x-1] == " ":
+#     temp1+= k[x].upper()
+#   else:
+#     temp1+=k[x]
+# print(temp1)
 
+# k =[10,20,30,40,10,20]
+# d=list(set(k))
+# d.sort()
+# print(d)
+# temp = []
+# for x in k:
+#   if x not in temp:
+#     temp.append(x)
+# 
+# j = [10,11,12,3.2,'python',10.2]
+# temp = 0 
+# for i in j:
+#   if type(i)==int or type(i)==float:
+#     temp+= i
+# print(temp)
+# 
+# k = [10,11,12,5,2]
+# temp = k[0]
+# for i in k:
+#   if temp > i:
+#     temp = i
+# print(temp)
   
+# l = [10,20,11,13,'c++','python',3+2j]
+# temp=[]
+
+# for i in l:
+#   if type(i)==int and i%2==0:
+#     print(i)
+#   if type(i)== str:
+#     temp.append(i)
+# print(temp)
+
+j = [10,11,12,13]
+# temp = []
+# for i in j:
+#   if i%2==0:
+#     temp.append(i*2)
+#   else:
+#     temp.append(i)
+# print(temp)
+
+for i in range(0,len(j)):
+  if i%2==0:
+    j[i] = j[i]*2
+print(j)
+
+
+    

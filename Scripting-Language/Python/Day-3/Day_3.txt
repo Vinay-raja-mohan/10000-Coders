@@ -38,6 +38,17 @@ Non-Primitive Data Types
     use .append(value) to add new values at the end  # k.append(10) 10 is a value not a index position
     use .remove(value) to remove a value # k.remove(20) 20 is a value not a index position
     Examples ; k = [10,'string',3e1,2+3j,True]
+    use .insert(index, value) Inserts a value at a specific index position.
+    use .sort() Sorts the list in ascending order.
+    use .sort(reverse=True) Sorts the list in descending order.
+    use .index(10) Returns the index position of the first occurrence of the value.
+    use .count(Value) Counts how many times a value appears in the list.
+    use  a =b.copy() Creates a shallow copy of the list (a new list with same elements).
+    use .clear() Removes all elements from the list and makes it empty.
+
+    sum(variable) Adds all the numeric values in a list.
+    min(variable) Returns the smallest value in the list.
+    max(variable) Returns the largest value in the list.
 
     2.NESTED LIST
       A list inside a list.
