@@ -33,17 +33,3 @@ select city from emp group by city having count(*) =
 (SELECT MAX(cnt) FROM 
 (SELECT COUNT(*) AS cnt FROM emp GROUP BY city) y);
 
-
-
-
-
--------Views--------
--- Creates a virtual table for the main table, 
--- So that we can easily access the table
--- Save the time
--- Provide security by giving names
-
--- create view view_name as[
--- command ]
-
--- select * from view_name

@@ -43,8 +43,9 @@ Non-Primitive Data Types
     use .sort(reverse=True) Sorts the list in descending order.
     use .index(10) Returns the index position of the first occurrence of the value.
     use .count(Value) Counts how many times a value appears in the list.
-    use  a =b.copy() Creates a shallow copy of the list (a new list with same elements).
+    use a =b.copy() Creates a shallow copy of the list (a new list with same elements).
     use .clear() Removes all elements from the list and makes it empty.
+    use .count(value) how many times a values are repeated.
 
     sum(variable) Adds all the numeric values in a list.
     min(variable) Returns the smallest value in the list.
