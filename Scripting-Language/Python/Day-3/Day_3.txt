@@ -46,6 +46,7 @@ Non-Primitive Data Types
     use a =b.copy() Creates a shallow copy of the list (a new list with same elements).
     use .clear() Removes all elements from the list and makes it empty.
     use .count(value) how many times a values are repeated.
+    use fist_list.extend(second_list)
 
     sum(variable) Adds all the numeric values in a list.
     min(variable) Returns the smallest value in the list.
