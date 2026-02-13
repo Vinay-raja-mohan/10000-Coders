@@ -1,5 +1,5 @@
-Procedures : reuse a block of code again and again
-            just like a function
+-- Procedures : reuse a block of code again and again
+--             just like a function
 
 delimiter $$
 create Procedure procedure_name()
@@ -8,7 +8,7 @@ commands
 end$$
 delimiter;
 
-calling the procedure:
+-- calling the procedure:
 call procedure_name();
 exec procedure_name() -- in sql server
 
@@ -20,7 +20,7 @@ end$$
 delimiter;
 
 
-remove the proccedure
+-- remove the proccedure
 drop procedure procedure_name;
 
 
