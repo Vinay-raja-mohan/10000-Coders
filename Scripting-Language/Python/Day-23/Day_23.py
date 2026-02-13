@@ -1,12 +1,14 @@
+# Dictionary iteration using items()
 s = {'a':10,'b':20}
 
 for x in s.items():
   print(x)
 
+# Create dictionary from list of tuples
 h = dict([('a',10),('b',20)])
 print(h)
 
-# reversing the keys and values
+# Reverse dictionary (swap keys and values)
 j = {'name':'ajay','mobile':123456789}
 temp = {}
 for k,v in j.items():
@@ -14,6 +16,7 @@ for k,v in j.items():
 
 print(temp)
 
+# Create dictionary with word lengths
 words = ['apple','banana','kiwi']
 temp ={}
 tem = {}
@@ -26,7 +29,7 @@ for i,j in temp.items():
 print(temp)
 print(tem)
 
-
+# Count characters in each word
 for k in words:
   count = 0
   for j in k:
@@ -34,6 +37,7 @@ for k in words:
   temp[k] = count
 print(temp)
 
+# Find divisors of a number
 j = 10  #{10:[1,2,5,10]}
 temp=[]
 for i in range(1,j+1):
@@ -44,6 +48,7 @@ tem = {}
 tem[j]=temp
 print(tem)
 
+# Find divisors for each element in list
 l = [10,20,30]
 old={}
 for i in l:
@@ -54,7 +59,7 @@ for i in l:
   old[i]=new
 print(old)
 
-
+# Create nested dictionary with squares and cubes
 keys = {}
 for i in range(1,4):
   values = {}
@@ -64,7 +69,7 @@ for i in range(1,4):
 
 print(keys)
 
-
+# Classify numbers as even/odd
 k=[10,22,21,23]
 d = {}
 for i in k:
@@ -74,6 +79,7 @@ for i in k:
     d[i]='odd'
 print(d)
 
+# Zip keys and values to create dictionary
 key=['name','age','city']
 value=['john',25,'new york']
 
@@ -88,6 +94,7 @@ print(temp)
 
 print(dict(zip(key,value)))
 
+# Check prime numbers and store in dictionary
 j=[11,12,13,14,17]
 temp = {}
 for i in j:
@@ -101,12 +108,14 @@ for i in j:
     temp[i]='not prime'
 print(temp)
 
+# Create dictionary of even squares
 temp = {}
 for i in range(1,11):
   if i%2==0:
     temp[i]=i**2
 print(temp)
 
+# Count character frequency in string
 d = 'success' #{s:3,u:1,c:2,e:1}
 res = {}
 
