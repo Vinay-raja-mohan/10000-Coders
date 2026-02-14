@@ -1,0 +1,440 @@
+{% extends 'translator/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <!-- Glassmorphism Card -->
+      <div class="main-card">
+        <form method="post" id="translationForm">
+          {% csrf_token %}
+
+          <!-- Header / Toolbar -->
+          <div class="translation-header">
+            <div class="header-left">
+              <span class="lang-label active">{{ detected_lang }}</span>
+            </div>
+            <i class="fa-solid fa-arrow-right-arrow-left text-white opacity-50"></i>
+            <div class="header-right">
+              {{ form.target_language }}
+            </div>
+          </div>
+
+          <!-- Input Area -->
+          <div class="translation-body">
+            <!-- Source Text -->
+            <div class="text-area-container source-container">
+              {{ form.text }}
+              <div class="toolbar-footer">
+                <span class="char-count">0 / 5000</span>
+                <button type="button" class="icon-btn" id="micBtn" title="Voice Input" onclick="toggleSpeech()">
+                  <i class="fa-solid fa-microphone"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Target Text -->
+            <div class="text-area-container target-container {% if translated_text %}active-result{% endif %}">
+              <textarea class="form-control" rows="6" readonly id="translatedText"
+                placeholder="Translation">{{ translated_text }}</textarea>
+
+              <!-- Loading Overlay -->
+              <div id="loader" class="loader-overlay d-none">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+
+              <div class="toolbar-footer">
+                <div class="action-buttons">
+                  {% if translated_text %}
+                  <button type="button" class="icon-btn" onclick="copyToClipboard()" title="Copy">
+                    <i class="fa-regular fa-copy"></i>
+                  </button>
+                  <button type="button" class="icon-btn" onclick="speakTranslatedText()" title="Listen">
+                    <i class="fa-solid fa-volume-high"></i>
+                  </button>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Bar -->
+          <div class="translation-actions">
+            <button type="submit" class="btn-translate">
+              <span>Translate</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copyToClipboard() {
+    const copyText = document.getElementById("translatedText");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value).then(function () {
+      // Visual feedback could be added here
+      const btn = document.querySelector('.fa-copy').parentElement;
+      const originalIcon = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check text-success"></i>';
+      setTimeout(() => {
+        btn.innerHTML = originalIcon;
+      }, 2000);
+    });
+  }
+
+  // Text to Speech Logic (Server-side gTTS)
+  function speakTranslatedText() {
+    const text = document.getElementById("translatedText").value;
+    const targetLang = document.getElementById("id_target_language").value;
+
+    if (!text) return;
+
+    // Stop any current audio
+    if (window.currentAudio) {
+      window.currentAudio.pause();
+    }
+
+    const audioUrl = `/speak/?text=${encodeURIComponent(text)}&lang=${targetLang}`;
+    const audio = new Audio(audioUrl);
+    window.currentAudio = audio;
+    audio.play().catch(e => console.error("Audio playback error:", e));
+  }
+
+  // Voice Recognition Logic
+  let recognition;
+  const micBtn = document.getElementById('micBtn');
+  const sourceTextArea = document.querySelector('textarea[name="text"]');
+
+  if ('webkitSpeechRecognition' in window) {
+    recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US'; // Default to English input as per requirements
+
+    recognition.onstart = function () {
+      micBtn.classList.add('recording');
+      micBtn.innerHTML = '<i class="fa-solid fa-microphone-lines fa-beat"></i>';
+    };
+
+    recognition.onend = function () {
+      micBtn.classList.remove('recording');
+      micBtn.innerHTML = '<i class="fa-solid fa-microphone"></i>';
+    };
+
+    recognition.onresult = function (event) {
+      const transcript = event.results[0][0].transcript;
+      sourceTextArea.value += transcript;
+      // Trigger input event to update char count
+      sourceTextArea.dispatchEvent(new Event('input'));
+    };
+
+    recognition.onerror = function (event) {
+      console.error("Speech recognition error", event.error);
+      micBtn.classList.remove('recording');
+      micBtn.innerHTML = '<i class="fa-solid fa-microphone-slash text-danger"></i>';
+    };
+  } else {
+    console.warn("Web Speech API not supported in this browser.");
+    if (micBtn) { // Check if micBtn exists before trying to hide it
+      micBtn.style.display = 'none';
+    }
+  }
+
+  function toggleSpeech() {
+    if (recognition) {
+      try {
+        recognition.start();
+      } catch (e) {
+        // If already started, stop it
+        recognition.stop();
+      }
+    } else {
+      alert("Voice input is not supported in this browser.");
+    }
+  }
+
+  // Simple char counter
+  const charCount = document.querySelector('.char-count');
+  if (sourceTextArea && charCount) {
+    sourceTextArea.addEventListener('input', function () {
+      charCount.textContent = `${this.value.length} / 5000`;
+    });
+  }
+
+  // Submit animation
+  const form = document.getElementById('translationForm');
+  if (form) {
+    form.addEventListener('submit', function () {
+      document.getElementById('loader').classList.remove('d-none');
+    });
+  }
+</script>
+
+<style>
+  .recording {
+    color: #ef4444 !important;
+    /* Red for recording state */
+    background: rgba(239, 68, 68, 0.1) !important;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+
+    70% {
+      box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+  }
+
+  /* Card Styling */
+  .main-card {
+    background: rgba(20, 20, 30, 0.4);
+    /* Darker glass tint */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    /* Stronger shadow */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Softer white border */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .translation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+  }
+
+  .lang-label {
+    font-weight: 600;
+    color: #e0e0e0;
+    /* Lighter text */
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+  }
+
+  .lang-label.active {
+    color: white;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    /* Gradient Active State */
+    border: none;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+
+  /* Select Dropdown Styling */
+  #id_target_language {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    color: #a5b4fc;
+    /* Indigo-light */
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    backdrop-filter: blur(5px);
+  }
+
+  #id_target_language:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  /* Option styling for dark mode */
+  #id_target_language option {
+    background: #1f2937;
+    color: white;
+  }
+
+  /* Body Layout */
+  .translation-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    .translation-body {
+      flex-direction: row;
+      height: 400px;
+    }
+  }
+
+  .text-area-container {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .source-container {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Textareas */
+  textarea.form-control {
+    border: none;
+    background: transparent;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #ffffff;
+    /* Pure white text */
+    resize: none;
+    flex: 1;
+    box-shadow: none !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Readability shadow */
+  }
+
+  textarea.form-control:focus {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  textarea.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    opacity: 1;
+  }
+
+  .target-container textarea {
+    background: rgba(0, 0, 0, 0.2);
+    /* Darker translucent background */
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e0e7ff;
+    /* Slightly bluish white */
+  }
+
+
+  /* Toolbar Footer */
+  .toolbar-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    min-height: 24px;
+  }
+
+  .icon-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: scale(1.1);
+  }
+
+  /* Action Button */
+  .translation-actions {
+    padding: 1.5rem;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.2);
+    /* Footer background */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-translate {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    /* Vibrant Gradient */
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+    color: white;
+    border: none;
+    padding: 0.8rem 3rem;
+    border-radius: 50px;
+    /* Pill shape */
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .btn-translate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+  }
+
+  /* Loader */
+  .loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    z-index: 10;
+    backdrop-filter: blur(2px);
+  }
+
+  @media (max-width: 767px) {
+    .source-container {
+      border-right: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .translation-body {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+</style>
+{% endblock %}
