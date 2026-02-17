@@ -1,4 +1,4 @@
--- triggers:- will store the action which operation will done in  another table;
+-- triggers:- will store the action which operation will done in another table;
 
 delimiter $$
 create trigger trigger_name
