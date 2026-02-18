@@ -48,9 +48,9 @@ Non-Primitive Data Types
     use .count(value) how many times a values are repeated.
     use fist_list.extend(second_list)
 
-    sum(variable) Adds all the numeric values in a list.
-    min(variable) Returns the smallest value in the list.
-    max(variable) Returns the largest value in the list.
+    sum(list_name) Adds all the numeric values in a list.
+    min(list_name) Returns the smallest value in the list.
+    max(list_name) Returns the largest value in the list.
 
     2.NESTED LIST
       A list inside a list.
