@@ -61,3 +61,6 @@ insert into trigger1 values (1,'naidu',200);
 
 update trigger1 set bal = 500 where id =2;
 
+
+select * from trigger1;
+
