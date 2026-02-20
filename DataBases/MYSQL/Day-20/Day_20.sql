@@ -26,3 +26,6 @@ select * from trigger1;
 
 update trigger1 set bal = 100 where id = 1;
 
+
+
+delete from trigger1 where id =2;
