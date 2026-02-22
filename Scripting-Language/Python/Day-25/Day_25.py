@@ -2,8 +2,8 @@
 # Which help us to use a piece of code repetatively
 
 # Types of Functions
-    # 1.Predefined Functions   --print(),max(),min(),avg(),sum()
-    # 2.Userdefined Functions
+#     1.Predefined Functions   --print(),max(),min(),avg(),sum()
+#     2.Userdefined Functions
 
 
 # def even(a,b):
