@@ -1,0 +1,47 @@
+Types of Arguments:
+Positional arguments
+Keyword arguments
+Default arguments
+Variable-length arguments (*args, **kwargs)
+
+Arguments in Python (with Examples)
+
+Arguments are the values passed to a function when you call it. They provide input for the function to work with.
+
+Types of Arguments in Python
+
+1️⃣ Positional Arguments
+Values are assigned to parameters based on their position (left to right).
+def greet(name, age):
+    print(f"Hello {name}, you are {age} years old.")
+
+2️⃣ Keyword Arguments
+You specify parameter names explicitly, so order doesn't matter.
+def greet(name, age):
+    print(f"Hello {name}, you are {age} years old.")
+
+greet(age=25, name='Ajay')
+
+3️⃣ Default Arguments
+You can give default values to parameters. If not provided during the call, the default is used.
+def greet(name, age=18):
+    print(f"Hello {name}, you are {age} years old.")
+
+greet('Ajay')         # Uses default age = 18
+greet('Kumar', 30)    # Overrides default age
+
+4️⃣ Variable Length Arguments
+*args → Non-keyword variable arguments (tuple)
+def add(*numbers):
+    print(numbers)
+    print(sum(numbers))
+
+add(10, 20, 30)   # Output: (10, 20, 30) and sum 60
+
+5️⃣ Keyword Variable Length Arguments
+**kwargs → Keyword variable arguments (dictionary)
+def display(**details):
+    print(details)
+
+display(name='Ajay', age=25, place='Hyderabad')
+
