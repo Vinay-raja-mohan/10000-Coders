@@ -1,0 +1,21 @@
+📚 All 12 Tenses (Easy Table)
+
+Tense Type	Tense Name	                Formula	                  Example
+Present	1. Simple Present	              Subject + V1	            I eat
+Present	2. Present Continuous	          am/is/are + V1+ing	      I am eating
+Present	3. Present Perfect	            has/have + V3	            I have eaten
+Present	4. Present Perfect Continuous	  has/have + been + V1+ing	I have been eating
+
+
+Tense Type	Tense Name	                Formula                  	Example
+Past	5. Simple Past	Subject + V2	I ate
+Past	6. Past Continuous	was/were + V1+ing	I was eating
+Past	7. Past Perfect	had + V3	I had eaten
+Past	8. Past Perfect Continuous	had been + V1+ing	I had been eating
+
+
+Tense Type	Tense Name	Formula	Example
+Future	9. Simple Future	will + V1	I will eat
+Future	10. Future Continuous	will be + V1+ing	I will be eating
+Future	11. Future Perfect	will have + V3	I will have eaten
+Future	12. Future Perfect Continuous	will have been + V1+ing	I will have been eating

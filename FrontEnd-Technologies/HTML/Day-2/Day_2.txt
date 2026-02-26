@@ -1,0 +1,41 @@
+Text Formating Tags:
+it is used to change the appeareance of the text
+
+<b> - bold - non semantic
+<strong> - same as bold but semantic - high importance
+<i> - italic - non semantic
+<em> - emphasized -same as italic but semantic
+<small> - makes the text smmall
+<big> - makes the text big
+<del> - del - strike out
+<ins> - insert - gives with underline
+<u> - underline
+<sup> - superscript
+<sub> - subscript
+center - makes the text align into center
+
+Attribute:
+it will provide the additional information about an html element.
+
+attribute can be written within open tag
+
+syntax:
+attributename = value
+
+<hi attributename = value>hello world<h1>
+
+Types of attributes:
+Global Attributes -
+  These attributes are applicable for every HTML element
+  style
+  id
+  class
+  title - creates a tool tip
+
+Element Specific Attributes
+  These attributes applicable for specific HTML elements only
+
+  image tag:
+    two attributes:
+    src - image path - absolute - relative
+    alt - alternate text
