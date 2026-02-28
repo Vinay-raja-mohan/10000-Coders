@@ -1,1 +1,66 @@
-Marquee Tag
+The <marquee> tag is used to create scrolling (moving) text or 
+images inside a webpage. 
+Syntax: <marquee attribute="value">Scrolling Text</marquee> 
+ 
+Attributes in marquee tag: 
+1.direction : Defines the scrolling direction. 
+  Values :  "left" (default), "right", "up", "down". 
+  Example : <marquee direction="right">Scrolling Right</marquee>
+
+2.behavior : Defines how the text should scroll. 
+    Values : "scroll" → (default) scrolls continuously. 
+             "slide" → scrolls once, then stops. 
+             "alternate" → bounces back and forth. 
+  Example : <marquee behavior="alternate">Bouncing Text</marquee> 
+ 
+3.scrollamount : Defines the speed of scrolling (number of pixels moved per step). 
+Example : <marquee scrollamount="20">Fast Scrolling</marquee> 
+ 
+4.scrolldelay : Defines the delay (in milliseconds) between each movement. 
+Example : <marquee scrolldelay="200">Slow Scroll</marquee> 
+ 
+5.loop : Defines how many times the marquee should run. 
+Value : a number (3, 5, etc.) or "infinite" (default). 
+Example : <marquee loop="3">Scrolls 3 times only</marquee>
+
+
+Elements : Element is nothing but combination of open tag and closing tag along with content
+Syntax : <open tag>content</closing tag> 
+Example : <h1>Valibasha Nabeesagari</h1>
+
+Types of elements: 
+  1.Inline elements 
+  2.Block level elements
+
+Inline elements: 
+  • These elements take as much as width its necessary. 
+  • They did not start in new line 
+  • height and width are not affected except for img tag 
+  • margin and padding are applicable only left and right not top and bottom 
+
+Block level elements: 
+  • They always start in a new line 
+  • They occupy 100% width 
+  • height and width are affected 
+  • Margin & padding → work in all directions (top, bottom, left, right).
+
+Inline block elements: 
+  • Behave like inline (stay in the same line) 
+  • But you can set width and height like a block element 
+
+
+Difference between Div and Span: 
+
+Use <div> for big blocks of content (layout/sections). 
+Use <span> for small inline styling (highlight/word formatting). 
+
+Div: 
+  div is a Block level element 
+  Starts on a new line, takes full width 
+  You can set width & height 
+
+Span: 
+  Span is a inline element 
+  Stays in the same line, takes only content width 
+  For styling small parts of text or inline elements 
+  Width/height not applied properly unless display:block or   inline-block
