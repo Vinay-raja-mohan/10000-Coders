@@ -1,0 +1,49 @@
+HTML Lists: 
+  A list in HTML is a way to group related items together in a 
+  structured format using special tags. 
+
+  Types of Lists in HTML: 
+      1.Ordered list 
+      2.Un Ordered list 
+      3.Definition/Description list 
+ 
+For list item we use <li>item</li> tag 
+
+1.Ordered List: 
+
+  • An ordered list displays items with numbers/letters/roman 
+  numerals. 
+  • For Ordered list we use <ol> tag 
+  
+Attributes in ol tag:  
+  • type 
+  • start 
+  • reversed
+
+2.Unordered list: 
+  • An unordered list displays items with bullets. 
+  • For unordered list we use <ul> tag 
+ 
+Attributes in Unordered list: 
+  • type: defines the list item style
+
+3.Definition/Description list: 
+  Used for terms and their descriptions. 
+    <dl> → Description list container 
+    <dt> → Description term 
+    <dd> → Description definition
+
+Anchor tag:(<a>) 
+  • The anchor tag in HTML is used to create hyperlinks. 
+  • It connects one page to another, or one section of a page 
+  to another. 
+  • It is written as <a> and closed with </a>. 
+ 
+Attributes in anchor tag: 
+  href → Specifies the URL (web address) or file path to 
+  link 
+  Ex: href=https://google.com 
+    target → Specifies where to open the link. 
+      • _self → same tab (default). 
+      • _blank → new tab/window. 
+  title → Shows extra info when you hover the mouse over the link.

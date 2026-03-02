@@ -1,0 +1,50 @@
+Multimedia:
+Multimedia in HTML means adding different types of media (like images, audio, video,animations, and interactive content) to a webpage along with text.
+
+HTML without multimedia = a book with only text.
+
+HTML with multimedia = a movie with sound, visuals, and subtitles.
+
+Multimedia Concepts in HTML:
+  • img
+  • audio
+  • video
+  • iframe
+
+1.img:
+  The <img> tag is used to embed images.
+  It is a self closing tag
+  It is one of the inline element
+Attributes:
+  • src → Path of the image.
+  • alt → Alternate text (important for SEO & accessibility).
+  • width / height → Dimensions of image.
+Real-Time Example:
+  • Product images on e-commerce websites.
+  • Profile pictures in social media
+
+2.audio:
+  The <audio> tag is used to embed sound (music, voice, or effects) in a webpage.
+  Attributes:
+  • src → Path of the audio file.
+  • controls → Displays play, pause, volume controls.
+  • autoplay → Audio starts automatically (may be blocked by browsers).
+  • loop → Replays the audio when it ends.
+  • muted → Starts audio in muted mode.
+
+3.Video:
+The <video> tag is used to embed videos on a webpage.
+Attributes:
+  • src → Path of the video file.
+  • controls → Displays play, pause, volume, fullscreen
+  buttons.
+  • autoplay → Plays video automatically.
+  • loop → Repeats video after it ends.
+  • muted → Starts video without sound.
+  • poster → Thumbnail image before the video plays.
+  • width / height → Set video size.  
+
+4.iframe
+Iframe is used to embeded the other web page source in to the
+current web page source
+
