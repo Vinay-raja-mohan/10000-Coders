@@ -1,0 +1,18 @@
+Table
+Table has caption,thead,tbody,trow,tfoot
+
+th - table heading
+tr - table row
+td - table data
+caption - table name
+
+attributes
+border -
+style - 
+border-collapse
+cellspacing
+cellpadding
+align
+bgcolor
+rowspan
+colspan
