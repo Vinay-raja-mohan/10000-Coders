@@ -38,7 +38,7 @@ while True:
     input("Player1 Press Enter")
     a=random.randint(1,6)
     score1+=a
-    print("P1 =",score1)
+    print("P1 =",score1)    
     input("Player2 Press Enter")
     b = random.randint(1,6)
     score2+=b
