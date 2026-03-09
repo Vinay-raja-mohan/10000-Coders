@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layouts</title>
+  <style>
+    .navbar {
+      display: flex;
+      background-color: lightpink;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 20px;
+      border:2px solid;
+    }
+
+    ul {
+      display: flex;
+      gap: 30px;
+    }
+
+    ul a {
+      text-decoration: none;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    .parent{
+      display:flex;
+    }
+
+    .section{
+      border:2px solid;
+      padding: 40px;
+      background-color: lightseagreen;
+    }
+
+    .article{
+      border:2px solid;
+      padding: 40px;
+      background-color: lightseagreen;
+    }
+
+    .aside{
+      width:500px;
+      border:2px solid;
+    }
+
+    .footer{
+      text-align:center;
+      background-color:black;
+      color:white;
+      padding:10px;
+    }
+
+    .top{
+      display:flex;
+      align-items:center;
+      
+    }
+
+    .top img{
+      padding-left:10px;
+      height:50px;
+    }
+
+    
+
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="top"><h1>HTML 5 </h1> <img src="./html_img.png" width=50px></div>
+    <ul>
+      <a href="">
+        <li>Home</li>
+      </a>
+      <a href="">
+        <li>About</li>
+      </a>
+      <a href="">
+        <li>Carrers</li>
+      </a>
+      <a href="">
+        <li>Contact</li>
+      </a>
+    </ul>
+  </div>
+
+
+  <div class="parent">
+    <div class="main">
+      <div class="section">
+        Html interview questions:*
+        what is html?
+        what is marquee tag?
+        why we use anchor tag?
+        what are the attributes in form tag?
+        what is list?types of list?
+        what are multimedia concepts?
+        what is iframe?
+        what is the diff bw rowspan and colspan>
+        what is the diff bw cellspacing and cellpadding?
+        what is the diff bw _self and _blank?
+        what is the diff bw bol and strong?
+        write the basic structure of html?
+        write the syntax for radio and checkbox in forms?
+        what are the attributes in html?
+        types of elements?
+      </div>
+
+      <div class="article">
+        Based on the search results, the "Antigravity problem with shortcut" refers to Google Antigravity IDE failing to
+        open, especially on Windows, because it cannot locate the necessary $HOME directory, or when the desktop
+        shortcut is
+        broken after updates.
+        Reddit
+        Reddit
+        +2
+        Here is the quick fix/shortcut workaround, along with other common solutions.
+        1. The Quickest Fix (Windows Shortcut/PowerShell)
+        If Antigravity fails to launch or "agentically" open the browser (often due to missing $HOME variable), run this
+        command in PowerShell to create the required link:
+        Open PowerShell as Administrator.
+        Paste and run:
+        [Environment]::SetEnvironmentVariable("HOME", "C:\Users\$($env:USERNAME)", "User")
+        Restart the Antigravity application.
+        Reddit
+        Reddit
+        +2
+        2. Fixing the Desktop Shortcut
+      </div>
+    </div>
+
+    <div class="aside">
+      <h4>Hello layout</h4>
+      <h4>Hello layout</h4>
+      <h4>Hello layout</h4>
+      <h4>Hello layout</h4>
+    </div>
+  </div>
+
+  <div class="footer">
+    made with ❤️ by vinay
+  </div>
+
+</body>
+
+</html>
