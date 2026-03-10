@@ -1,4 +1,6 @@
 import random
+import pyttsx3
+import time
 
 pas=''
 
@@ -37,8 +39,6 @@ print(new_pass)
 
 print(random.sample('python',k=5))
 
-import pyttsx3
-import time
 en = pyttsx3.init()
 en.setProperty('rate',50)
 
