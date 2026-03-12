@@ -1,0 +1,38 @@
+CSS
+
+Selector{
+  property_name:Property_value;
+}
+
+Types of CSS
+1. Inline CSS
+2. Internal CSS
+3. External CSS
+
+Inline CSS
+adv
+  can be direlctly written within the element
+dis
+  will not work for all elements with same element name,need to write the same styling multiple times
+
+Internal CSS
+adv
+  written in style tag inside head tag , supported for multiple elements
+dis
+  not supported for multiple files
+
+External CSS
+adv
+  code written in a seperate file, supports multiple files.
+dis
+  file not linking properly
+
+
+Cascading
+which styling will be choosen by the file.
+if we write inline internal and external css at a time which one will display is the cascading
+
+importance
+
+inline > internal > external (based on code if styling written under link then this)
+inline > external > intenal (based on code if styling written above link then this)
