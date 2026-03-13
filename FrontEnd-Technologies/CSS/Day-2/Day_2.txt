@@ -1,0 +1,26 @@
+selectors:
+  select the html element which we wanted to style
+
+Types of Selectors:
+  Basic selectors / simple selector
+  Combination selectors / combinators
+  Pseudo selectors
+    - Pseudo class selector
+    - Pseudo element selector
+
+Basic Selector
+-----------------
+tag selector - tag name
+id - #
+class - .
+grouping - ,
+universal- *
+
+
+Combination selector
+-----------------
+Desecendant selector : selects  both direct and indrect children
+Child selector : selects only direct children
+
+Adjacent sibling selector(+) : selects immediate child only one
+General sibling selector(~) : selects all siblings 
