@@ -1,0 +1,68 @@
+a:link{
+  color:red;
+}
+
+a:hover{
+  font-size:xx-large;
+  color:black;
+}
+
+a:visited{
+  color:rgb(0, 0, 0);
+}
+
+a:active{
+  color:darkgreen;
+}
+
+input:focus{
+  padding:10px;
+  background-color:beige;
+}
+
+input:checked+label{
+color:red;
+text-decoration:line-through;
+}
+
+.main-card{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+.card{
+  width:300px;
+  border:2px solid black;
+  border-radius:30px;
+  text-align:center;
+  background-color:bisque;
+  padding-bottom:20px;
+}
+
+.card:hover{
+  background-color:rgb(255, 165, 55);
+  animation-duration:3sec;
+}
+
+.card>h3+p{
+  font-size:large;
+}
+
+.card>h3+p::selection{
+  background-color:fuchsia;
+  color:yellow;
+}
+
+input{
+  border-radius:20%;
+}
+
+.new>p::first-letter{
+  font-weight:bolder;
+  font-size:xx-large;
+}
+
+.new::selection{
+  background-color:brown;
+  color:yellow;
+}

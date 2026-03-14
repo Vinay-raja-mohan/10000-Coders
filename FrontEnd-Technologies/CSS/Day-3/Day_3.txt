@@ -1,0 +1,17 @@
+Pseudo Selectors:
+it is changing the actual behaviour of an element
+
+Pseudo class: based on the state or position
+link
+hover
+visited
+active
+focus
+checked
+first-child
+last-child
+nth-child
+nth-of-type
+
+
+Pseudo element: based on the part of an element
