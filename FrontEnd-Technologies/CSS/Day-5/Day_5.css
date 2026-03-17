@@ -1,0 +1,81 @@
+.card{
+  width:250px;
+  height:250px;
+  border:2px solid black;
+  text-align:center;
+}
+
+.innercard{
+  border:2px solid black;
+  height:150px;
+  width:150px;
+  border-radius:50%;
+  margin:auto;
+}
+
+.parent{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+#colorname{
+  background-color:red;
+}
+
+#hexa{
+  background-color:#ab12cd
+}
+
+#rgb{
+  background-color:rgb(116,112,90)
+}
+
+#rgba{
+  background-color:rgba(116,112,90,0.3)
+}
+
+#hsl{
+  background-color:hsl(219, 91%, 65%)
+}
+
+#hsla{
+  background-color:hsla(219, 91%, 65%,0.3)
+}
+
+#lg{
+  background:linear-gradient(to top,red,yellow)
+}
+
+#rlg{
+  background:repeating-linear-gradient(red 10px,blue 20px)
+}
+
+#rg{
+  background:radial-gradient(white,black)
+}
+
+#rrg{
+  background:repeating-radial-gradient(white 10px,black 20px)
+}
+
+
+.prop{
+  color:darksalmon;
+  text-align:end;
+  text-decoration:overline;
+}
+
+.para{
+  text-indent:60px;
+  text-transform:capitalize;
+  text-shadow:10px 5px 10px red;
+  letter-spacing:0.5px;
+  word-spacing:3px;
+  line-height:20px;
+
+  font-size:small;
+  font-family: cursive;
+  font-weight:bold;
+  font-style:oblique; 
+}

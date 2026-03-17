@@ -1,0 +1,33 @@
+Color Theory
+colorname
+hexadecimal: # 6char a-f 0-9
+rgb - (0-255,0-255,0-255)
+rgba - (0-255,0-255,0-255,0.1-1)
+hsl - hue saturation lightness (number, %, %)
+hsla - hue saturation lightness alpha
+
+
+multiple colors:
+linear gradient
+repeating-linear-gradient
+radial-gradient
+repeating-radial-gradient
+
+
+Typography:
+text-properties:
+color : colorname,rgb,hexa
+text-align: start/end/center/justify
+text-decoration : underline/overline/linethrough/
+text-indent: pixels
+text-transform: uppercase/lowercase/captalize
+text-shadow: horizontal px vertical px blur radius color
+letter-spacing: px
+word-spacing: px
+line-height: px
+
+font properties
+font-size: px,small/medium/large/x-large/xx-large
+font-family: font name
+font-weight:bold/bolder / 100-900
+font-style: normal/italic/oblique
