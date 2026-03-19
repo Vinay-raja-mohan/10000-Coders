@@ -1,81 +1,81 @@
-# "staticmethod"
-# # no self no cls
+"staticmethod"
+# no self no cls
 
-# class bank:
-#   @staticmethod
-#   def create_acc():
-#     print("static method")
+class bank:
+  @staticmethod
+  def create_acc():
+    print("static method")
 
-# bank.create_acc()
+bank.create_acc()
 
-# obj = bank()
-# obj.create_acc()
-
-
-# class cal:
-#   @staticmethod
-
-#   def add(a,b,c):
-#     print(a+b+c)
-
-# cal.add(1,2,3)
+obj = bank()
+obj.create_acc()
 
 
-# "local variables"
-# class emp:
-#   def __init__(slef):
-#     names = 'vinay'
-#     fname = 'tharaka'
+class cal:
+  @staticmethod
+
+  def add(a,b,c):
+    print(a+b+c)
+
+cal.add(1,2,3)
+
+
+"local variables"
+class emp:
+  def __init__(slef):
+    names = 'vinay'
+    fname = 'tharaka'
   
-#   def name(self):
-#     print(self.name)
+  def name(self):
+    print(self.name)
   
-#   @classmethod
-#   def cls_method(cls):
-#     emp_salary = 60000
-#     print(emp_salary)
+  @classmethod
+  def cls_method(cls):
+    emp_salary = 60000
+    print(emp_salary)
 
-#   @staticmethod
-#   def static_method():
-#     emp_dept='sales'
-
-
-
-# obj = emp()
-# obj.name()
-
-# emp.cls_method()
+  @staticmethod
+  def static_method():
+    emp_dept='sales'
 
 
-# "super"
 
-# class parent:
-#   def __init__(self):
-#     print("this is parent constructor")
+obj = emp()
+obj.name()
 
-# class child(parent):
-#   def __init__(self):
-#     super().__init__()
-#     print("this is child constructor")
-
-# obj = child()
-# # obj2 = parent()
+emp.cls_method()
 
 
-# class bank:
-#   def __init__(self,acc_no):
-#     self.acc_no = acc_no
-#     acc_no = 12
+"super"
 
-# class sbi(bank):
-#   def __init__(self,bank_name,v):
-#     self.bank_name = bank_name
-#     print('bank name: ',self.bank_name)
-#     super().__init__(v)
-#     print('acc no: ',self.acc_no)
+class parent:
+  def __init__(self):
+    print("this is parent constructor")
+
+class child(parent):
+  def __init__(self):
+    super().__init__()
+    print("this is child constructor")
+
+obj = child()
+# obj2 = parent()
 
 
-# obj = sbi('sbi',12)
+class bank:
+  def __init__(self,acc_no):
+    self.acc_no = acc_no
+    acc_no = 12
+
+class sbi(bank):
+  def __init__(self,bank_name,v):
+    self.bank_name = bank_name
+    print('bank name: ',self.bank_name)
+    super().__init__(v)
+    print('acc no: ',self.acc_no)
+
+
+obj = sbi('sbi',12)
 
 
 class school:
