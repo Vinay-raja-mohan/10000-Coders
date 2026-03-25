@@ -67,7 +67,7 @@ country(india_obj)
 america_obj = america()
 country(america_obj)
 
-default arg polymorphism
+'default arg polymorphism'
 
 def add(a, b=0, c=0):
     return a + b + c
