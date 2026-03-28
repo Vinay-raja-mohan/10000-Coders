@@ -1,0 +1,36 @@
+Flex:
+parent properties:
+display:flex
+flex-direction : row,row-reverse,column,column-reverse
+flex-wrap: no-wrap, wrap, wrap-reverse
+flex-flow:shorthand for flex-direction and flex wrap
+justify-content: center, start, end, space-between, space-evenly, space-around
+align-items: center,end,start - vertical alignment
+align-content: multiple rows
+
+child properties:
+order: stacking, default 0
+flex-grow: increase on parent size
+flex-shrink: decrease on parent size
+flex-basis:inc siz on pixels
+align-self:vertical alignment
+
+
+
+Grid:
+parent properties
+display:grid;
+
+
+
+child properties:
+grid-rows-start
+grid-row-end
+grid - row
+grid-column-start
+grid-column-end
+grid-column
+justify-self
+align-self
+
+

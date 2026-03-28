@@ -1,0 +1,33 @@
+*{
+  margin:0px;
+}
+header{
+  display:flex;
+  background-color:#008000;
+  justify-content:space-between;
+  height:40px;
+  color:white;
+  align-items:center;
+}
+
+.title{
+  margin:10px;
+  font-size:30px;
+  letter-spacing:5px;
+}
+.options{
+  display:flex;
+  gap:30px;
+  justify-content:space-evenly;
+  margin:10px;
+  font-size:20px;
+}
+
+img{
+  width:100%;
+}
+
+.overlay-txt{
+  position:relative;
+  top:0px
+}
