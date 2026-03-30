@@ -1,0 +1,62 @@
+Parent Properties
+display: grid / inline-grid
+
+grid-template-columns: define columns (px, %, fr)
+grid-template-rows: define rows
+
+grid-template: shorthand for rows + columns
+
+gap: space between rows & columns
+row-gap: space between rows
+column-gap: space between columns
+
+justify-content: horizontal alignment of whole grid
+align-content: vertical alignment of whole grid
+
+place-content: shorthand for justify-content + align-content
+
+justify-items: align items horizontally inside cells
+align-items: align items vertically inside cells
+
+place-items: shorthand for justify-items + align-items
+
+grid-auto-rows: size for auto-created rows
+grid-auto-columns: size for auto-created columns
+
+grid-auto-flow: row / column / dense (auto placement)
+
+
+Child Properties
+grid-column-start: starting column line
+grid-column-end: ending column line
+grid-column: shorthand
+
+grid-row-start: starting row line
+grid-row-end: ending row line
+grid-row: shorthand
+
+grid-area: shorthand for row + column (or named area)
+
+justify-self: horizontal alignment inside cell
+align-self: vertical alignment inside cell
+
+place-self: shorthand for justify-self + align-self
+
+
+Transforms:
+Transforms are used to change the element shape size and position.
+
+Transform: functionname()
+
+Transform:rotate()
+Transform:scale()
+Transform:skew()
+Transform:translate()
+Transform:matrix()
+
+
+transition-property:
+transition-duration:
+transition-delay:
+transition-timing-function:
+transition:
