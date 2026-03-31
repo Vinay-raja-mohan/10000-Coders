@@ -1,0 +1,61 @@
+.circle{
+  width: 100px;
+  height: 100px;
+  background-color:red;
+  animation-name:box;
+  animation-duration:3s;
+  /* animation-delay:2s; */
+  /* animation-timing-function:normal; */
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+  /* animation-fill-mode:forwards; */
+  box-shadow:5px 5px 9px black;
+  position:relative;
+  border-radius:50%;
+}
+
+/* @keyframes box{
+  from{
+    width:100px;
+    height:100px;
+    background-color:rgb(62, 44, 230);
+  }
+
+  to{
+    width:200px;
+    height:200px;
+    background-color:green;
+    border-radius:70%;
+  }
+} */
+
+@keyframes box{
+  0%{
+    top: 0px;
+    left: 0px;
+  }
+
+  25%{
+    top:400px;
+    left:0px;
+    background-color:green;
+  }
+
+  50%{
+    left:400px;
+    top:400px;
+    background-color:yellow;
+  }
+
+  75%{
+    top:0px;
+    left:400px;
+    background-color:aquamarine;
+  }
+
+  100%{
+    top:0px;
+    left:0px;
+    background-color:brown;
+  }
+}

@@ -1,0 +1,34 @@
+Animations are used to create animation on a element
+animation works with user interaction
+
+animation properties:
+animation-name
+animation-duration
+animation-delay
+animation-timing-function
+animation-fill-mode:forwards backwards
+animation-direction:
+
+
+
+media-quries:
+
+screen-size:
+
+screen devices:
+---------------
+small mobiles: 320px to 374px
+medium mobile: 375px to 424px
+large mobiles: 425px to 767px
+small laptops/tablets: 768px to 1023px
+medium laptop: 1024px to 1439px
+large laptops: 1440px to 2559px
+tv/4k screens: from 2559px.
+
+
+@media (min-width:320px) and (max-width:374px){
+  css//
+  body{
+    
+  }
+}
